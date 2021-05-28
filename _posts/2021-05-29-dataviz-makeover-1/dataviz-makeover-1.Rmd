@@ -1,0 +1,26 @@
+---
+title: "DataViz Makeover 1"
+description: |
+  A short description of the post.
+author:
+  - name: Hong, Yun Ting
+    url: https://www.linkedin.com/in/yuntinghong/
+date: 05-29-2021
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# 1.0 Critiques and alternative presentation
+
+## 1.1 Clarity
+
+
+## 1.2 Aesthetics 
+
+

@@ -1,5 +1,22 @@
 [
   {
+    "path": "posts/2021-05-29-dataviz-makeover-1/",
+    "title": "DataViz Makeover 1",
+    "description": "A short description of the post.",
+    "author": [
+      {
+        "name": "Hong, Yun Ting",
+        "url": "https://www.linkedin.com/in/yuntinghong/"
+      }
+    ],
+    "date": "2021-05-29",
+    "categories": [],
+    "contents": "\n1.0 Critiques and alternative presentation\n1.1 Clarity\n1.2 Aesthetics\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-05-29T02:01:44+08:00",
+    "input_file": {}
+  },
+  {
     "path": "posts/2021-05-22-my-first-post/",
     "title": "My First Post",
     "description": "A short description of the post.",
