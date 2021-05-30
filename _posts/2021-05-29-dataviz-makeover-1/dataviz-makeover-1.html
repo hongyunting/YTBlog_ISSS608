@@ -116,7 +116,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["dataviz-makeover-1_files/anchor-4.2.2/anchor.min.js","dataviz-makeover-1_files/bowser-1.9.3/bowser.min.js","dataviz-makeover-1_files/distill-2.2.21/template.v2.js","dataviz-makeover-1_files/jquery-1.11.3/jquery.min.js","dataviz-makeover-1_files/popper-2.6.0/popper.min.js","dataviz-makeover-1_files/tippy-6.2.7/tippy-bundle.umd.min.js","dataviz-makeover-1_files/tippy-6.2.7/tippy-light-border.css","dataviz-makeover-1_files/tippy-6.2.7/tippy.css","dataviz-makeover-1_files/tippy-6.2.7/tippy.umd.min.js","dataviz-makeover-1_files/webcomponents-2.0.0/webcomponents.js","img/AddColors.png","img/AlternativeDesign.png","img/Annotate.png","img/Consolidated.png","img/CountriesProperties.png","img/CreateCalField.png","img/DataSource.png","img/DataType.png","img/EditColors.png","img/EditingColors.png","img/FilterCountries.png","img/FilterInterface.png","img/FilterPeriod.png","img/FinalViz.png","img/NetExport.png","img/ReorganizeData.png","img/RowCol.png","img/Transpose.png"]}
+  {"type":"character","attributes":{},"value":["dataviz-makeover-1_files/anchor-4.2.2/anchor.min.js","dataviz-makeover-1_files/bowser-1.9.3/bowser.min.js","dataviz-makeover-1_files/distill-2.2.21/template.v2.js","dataviz-makeover-1_files/jquery-1.11.3/jquery.min.js","dataviz-makeover-1_files/popper-2.6.0/popper.min.js","dataviz-makeover-1_files/tippy-6.2.7/tippy-bundle.umd.min.js","dataviz-makeover-1_files/tippy-6.2.7/tippy-light-border.css","dataviz-makeover-1_files/tippy-6.2.7/tippy.css","dataviz-makeover-1_files/tippy-6.2.7/tippy.umd.min.js","dataviz-makeover-1_files/webcomponents-2.0.0/webcomponents.js","img/AddColors.png","img/AlternativeDesign.png","img/Annotate.png","img/Consolidated.png","img/CountriesProperties.png","img/CreateCalField.png","img/DataSource.png","img/DataType.png","img/EditColors.png","img/EditingColors.png","img/FilterCountries.png","img/FilterInterface.png","img/FilterPeriod.png","img/FinalViz.png","img/NetExport.png","img/OriginalDesign.png","img/ReorganizeData.png","img/RowCol.png","img/Transpose.png"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1481,7 +1481,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#critiques-and-proposed-solution">1.0 Critiques and Proposed Solution</a><ul>
+<li><a href="#critiques-on-the-original-design">1.0 Critiques on the original design</a><ul>
 <li><a href="#clarity">1.1 Clarity</a></li>
 <li><a href="#aesthetics">1.2 Aesthetics</a></li>
 </ul></li>
@@ -1500,7 +1500,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </ul>
 </nav>
 </div>
-<h1 id="critiques-and-proposed-solution">1.0 Critiques and Proposed Solution</h1>
+<h1 id="critiques-on-the-original-design">1.0 Critiques on the original design</h1>
+<p>This is the original design to illustrate Singapore’s Merchandise Trade with its Top Six Trading Countries from 2019 to 2020 <img src="img/OriginalDesign.png" /></p>
 <h3 id="clarity">1.1 Clarity</h3>
 <table>
 <colgroup>
@@ -1518,23 +1519,28 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <tbody>
 <tr class="odd">
 <td>1</td>
-<td>X-axis title labelled as Month of Period but the marker for x-axis is only showing years.</td>
-<td>Shows the markers for months if the axis labelled months</td>
+<td><strong>Title can be more informative</strong> - The title states what is the data showing, but it did not states what is the data is trying to portray</td>
+<td>Come out with a short description on what should the reader’s be expecting or gaining from the chart</td>
 </tr>
 <tr class="even">
 <td>2</td>
-<td><strong>Inconsistent Markers</strong> - Japan only shows Year 2020 data, whereas the other countries show data from Year 2019 to end of Year 2020</td>
+<td><strong>Inconsistent data used</strong> - Japan only shows Year 2020 data, whereas the other countries show data from Year 2019 to end of Year 2020</td>
 <td>Data should be consistent throughout all countries for a fair comparison</td>
 </tr>
 <tr class="odd">
 <td>3</td>
-<td></td>
-<td></td>
+<td><strong>Using wrong type of chart</strong> - Area line chart is best used when there is at least 1 variable that represent a summation value</td>
+<td>Since ‘Import’ and Export’ are independent variables, I would recommend using line chart if we want to understand the trends.</td>
 </tr>
 </tbody>
 </table>
 <h3 id="aesthetics">1.2 Aesthetics</h3>
 <table>
+<colgroup>
+<col style="width: 7%" />
+<col style="width: 45%" />
+<col style="width: 47%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th>No</th>
@@ -1545,13 +1551,18 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <tbody>
 <tr class="odd">
 <td>1</td>
-<td></td>
-<td></td>
+<td><strong>No focus area</strong> - There is no annotation or special colored data to indicate point of interest</td>
+<td>Highlight certain data to capture reader’s attention</td>
 </tr>
 <tr class="even">
 <td>2</td>
-<td></td>
-<td></td>
+<td><strong>X axis markers</strong> - X-axis title labeled Month of Period but the markers are only showing years</td>
+<td>Shows the markers for months if the axis labeled months</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td><strong>Transparency of area chart</strong> - The opacity of the overlapping area is not prominent for both data to be seen clearly</td>
+<td>Increase the transparency of ‘Import’ data</td>
 </tr>
 </tbody>
 </table>
@@ -1560,12 +1571,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h3 id="advantages-of-proposed-design">2.1. Advantages of proposed design</h3>
 <h4 id="clarity-1">2.1.1 Clarity</h4>
 <ol type="i">
-<li>Title tells a better story of what is to be expected from the graph and subtitle is used to annotate the overall chart</li>
-<li>Instead of raw import and export data, this graph uses of Net Export formula (Export - Import) to illustrate the impact of Import and Export trades</li>
+<li>Title tells a better story of what is to be expected from the graph and subtitle is used to annotate the overall chart.</li>
+<li>Instead of raw import and export data, this graph uses of Net Export formula (Export - Import) to illustrate the impact of Import and Export trades.</li>
+<li>Added units to x axis label to indicate the data is a monetary value.</li>
 </ol>
 <h4 id="aesthetics-1">2.1.2 Aesthetics</h4>
 <ol type="i">
-<li>Aesthetically, a simple line chart shows a better trends between the 6 countries</li>
+<li>Aesthetically, a simple line chart shows a better trends between the 6 countries.</li>
+<li>Color coordinated, with red indicating negative figures (Trade Deficit) and blue indicating positive figures (Trade Surplus).</li>
+<li>Annotation is used to highlight key points.</li>
+<li>Each line is accompanied with a country label instead of showing it as a separate legend.</li>
+<li>Y axis is not divided into 6 segments, trends can be spotted with the level of granularity for the time period</li>
 </ol>
 <h1 id="proposed-data-visualization">3.0. Proposed Data Visualization</h1>
 <p>Raw data are available at <a href="https://www.singstat.gov.sg/find-data/search-by-theme/trade-and-investment/merchandise-trade/latest-data"><strong>DoSS</strong></a>, under sub-section of Merchandise Trade by Region/Market.<br />
@@ -1624,6 +1640,11 @@ Right click on an empty space in the chart &gt; Annotate &gt; Area<br />
 <h3 id="snapshot-of-graph">5.1. Snapshot of Graph</h3>
 <p><img src="img/FinalViz.png" /></p>
 <h3 id="major-observation-andor-derived-insights">5.2. Major Observation and/or derived Insights</h3>
+<p>There are 2 extreme trading trends gathered between Taiwan and Hong Kong.</p>
+<p>Singapore trading behavior with Taiwan within this period can assumed to have contributed to Singapore economic growth due to trade surplus. Taiwan main import goods are oil/petroleum and natural gas, in which happen to be Singapore main export goods. Taiwan main export goods are electrical equipment and machinery, however, Singapore are importing it more from other countries such as China, Malaysia and United States. Therefore, Singapore is importing less from Taiwan, and exporting more to Taiwan, creating trade surplus.</p>
+<p>On the other hand, between 2019 to 2020, Singapore is experiencing trade deficit with Hong Kong. Hong Kong’s main exporting goods are electrical machinery, precious and minerals which Singapore needs. However, Hong Kong’s main imports goods are also machinery equipment which is largely provided by China and Singapore only stands a small percentage of the total export trade. This result in inflow of import goods exceeded the outflow of export goods and this create trade deficit.</p>
+<p><a href="https://oec.world/en/profile/country/sgp"><strong>Observatory of Economic Complexity, 2019</strong></a><br />
+<a href="https://trendeconomy.com/data/h2/Singapore/TOTAL"><strong>Singapore Import and Export data, 2019</strong></a></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
