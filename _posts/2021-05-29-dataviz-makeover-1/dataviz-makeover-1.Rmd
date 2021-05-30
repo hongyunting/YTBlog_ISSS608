@@ -21,7 +21,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 # 1.0 Critiques on the original design
 
-This is the original design to illustrate Singapore's Merchandise Trade with its Top Six Trading Countries from 2019 to 2020
+This is the original design to illustrate Singapore's Merchandise Trade with its Top Six Trading Countries from 2019 to 2020  
 ![](img/OriginalDesign.png)  
 
 ### 1.1 Clarity
