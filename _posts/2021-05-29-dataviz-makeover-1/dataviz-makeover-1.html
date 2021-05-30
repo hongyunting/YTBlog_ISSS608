@@ -111,12 +111,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["DataViz Makeover 1"]},{"type":"character","attributes":{},"value":["A short description of the post.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Hong, Yun Ting"]},{"type":"character","attributes":{},"value":["https://www.linkedin.com/in/yuntinghong/"]}]}]},{"type":"character","attributes":{},"value":["05-29-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["DataViz Makeover 1"]},{"type":"character","attributes":{},"value":["A short description of the post.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Hong, Yun Ting"]},{"type":"character","attributes":{},"value":["https://www.linkedin.com/in/yuntinghong/"]}]}]},{"type":"character","attributes":{},"value":["05-29-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc","toc_depth"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[3]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["dataviz-makeover-1_files/anchor-4.2.2/anchor.min.js","dataviz-makeover-1_files/bowser-1.9.3/bowser.min.js","dataviz-makeover-1_files/distill-2.2.21/template.v2.js","dataviz-makeover-1_files/jquery-1.11.3/jquery.min.js","dataviz-makeover-1_files/popper-2.6.0/popper.min.js","dataviz-makeover-1_files/tippy-6.2.7/tippy-bundle.umd.min.js","dataviz-makeover-1_files/tippy-6.2.7/tippy-light-border.css","dataviz-makeover-1_files/tippy-6.2.7/tippy.css","dataviz-makeover-1_files/tippy-6.2.7/tippy.umd.min.js","dataviz-makeover-1_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["dataviz-makeover-1_files/anchor-4.2.2/anchor.min.js","dataviz-makeover-1_files/bowser-1.9.3/bowser.min.js","dataviz-makeover-1_files/distill-2.2.21/template.v2.js","dataviz-makeover-1_files/jquery-1.11.3/jquery.min.js","dataviz-makeover-1_files/popper-2.6.0/popper.min.js","dataviz-makeover-1_files/tippy-6.2.7/tippy-bundle.umd.min.js","dataviz-makeover-1_files/tippy-6.2.7/tippy-light-border.css","dataviz-makeover-1_files/tippy-6.2.7/tippy.css","dataviz-makeover-1_files/tippy-6.2.7/tippy.umd.min.js","dataviz-makeover-1_files/webcomponents-2.0.0/webcomponents.js","img/AddColors.png","img/AlternativeDesign.png","img/Annotate.png","img/Consolidated.png","img/CountriesProperties.png","img/CreateCalField.png","img/DataSource.png","img/DataType.png","img/EditColors.png","img/EditingColors.png","img/FilterCountries.png","img/FilterInterface.png","img/FilterPeriod.png","img/FinalViz.png","img/NetExport.png","img/ReorganizeData.png","img/RowCol.png","img/Transpose.png"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1477,9 +1477,152 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 
 <div class="d-article">
-<h1 id="critiques-and-alternative-presentation">1.0 Critiques and alternative presentation</h1>
-<h2 id="clarity">1.1 Clarity</h2>
-<h2 id="aesthetics">1.2 Aesthetics</h2>
+<div class="d-contents d-contents-float">
+<nav class="l-text toc figcaption" id="TOC">
+<h3>Contents</h3>
+<ul>
+<li><a href="#critiques-and-proposed-solution">1.0 Critiques and Proposed Solution</a><ul>
+<li><a href="#clarity">1.1 Clarity</a></li>
+<li><a href="#aesthetics">1.2 Aesthetics</a></li>
+</ul></li>
+<li><a href="#alternative-design">2.0. Alternative Design</a><ul>
+<li><a href="#advantages-of-proposed-design">2.1. Advantages of proposed design</a></li>
+</ul></li>
+<li><a href="#proposed-data-visualization">3.0. Proposed Data Visualization</a></li>
+<li><a href="#data-visualisation-step-by-step">4.0. Data Visualisation Step-by-Step</a><ul>
+<li><a href="#data-preparation-in-excel">4.1. Data Preparation in Excel</a></li>
+<li><a href="#data-visualization-in-tableau">4.2. Data Visualization in Tableau</a></li>
+</ul></li>
+<li><a href="#final-visualization">5.0. Final Visualization</a><ul>
+<li><a href="#snapshot-of-graph">5.1. Snapshot of Graph</a></li>
+<li><a href="#major-observation-andor-derived-insights">5.2. Major Observation and/or derived Insights</a></li>
+</ul></li>
+</ul>
+</nav>
+</div>
+<h1 id="critiques-and-proposed-solution">1.0 Critiques and Proposed Solution</h1>
+<h3 id="clarity">1.1 Clarity</h3>
+<table>
+<colgroup>
+<col style="width: 7%" />
+<col style="width: 45%" />
+<col style="width: 47%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>No</th>
+<th>Critiques</th>
+<th>Proposed Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>X-axis title labelled as Month of Period but the marker for x-axis is only showing years.</td>
+<td>Shows the markers for months if the axis labelled months</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td><strong>Inconsistent Markers</strong> - Japan only shows Year 2020 data, whereas the other countries show data from Year 2019 to end of Year 2020</td>
+<td>Data should be consistent throughout all countries for a fair comparison</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="aesthetics">1.2 Aesthetics</h3>
+<table>
+<thead>
+<tr class="header">
+<th>No</th>
+<th>Critiques</th>
+<th>Proposed Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1 id="alternative-design">2.0. Alternative Design</h1>
+<p><img src="img/AlternativeDesign.png" /></p>
+<h3 id="advantages-of-proposed-design">2.1. Advantages of proposed design</h3>
+<h4 id="clarity-1">2.1.1 Clarity</h4>
+<ol type="i">
+<li>Title tells a better story of what is to be expected from the graph and subtitle is used to annotate the overall chart</li>
+<li>Instead of raw import and export data, this graph uses of Net Export formula (Export - Import) to illustrate the impact of Import and Export trades</li>
+</ol>
+<h4 id="aesthetics-1">2.1.2 Aesthetics</h4>
+<ol type="i">
+<li>Aesthetically, a simple line chart shows a better trends between the 6 countries</li>
+</ol>
+<h1 id="proposed-data-visualization">3.0. Proposed Data Visualization</h1>
+<p>Actual Data Visualization can be viewed at</p>
+<h1 id="data-visualisation-step-by-step">4.0. Data Visualisation Step-by-Step</h1>
+<h3 id="data-preparation-in-excel">4.1. Data Preparation in Excel</h3>
+<ol type="1">
+<li><p>Filter out the 6 countries (Hong Kong, Mainland China, Japan, Malaysia, Taiwan and United States) from <strong>Import</strong> Worksheet. <img src="img/FilterCountries.png" style="width:100.0%" /></p></li>
+<li><p>Retrieve data from Year 2019 Jan to Year 2020 Dec <img src="img/FilterPeriod.png" style="width:100.0%" /></p></li>
+<li><p>Repeat Step 1 and 2 again for <strong>Export</strong> worksheet</p></li>
+<li><p>Consolidate the data into a new worksheet <img src="img/Consolidated.png" style="width:100.0%" /></p></li>
+<li><p>Transpose data <img src="img/Transpose.png" style="width:90.0%" /></p></li>
+<li><p>Reorganize data into a new worksheet (Data), consisting only 4 columns (Period, Country, Import and Export) <img src="img/ReorganizeData.png" style="width:80.0%" /></p></li>
+</ol>
+<h3 id="data-visualization-in-tableau">4.2. Data Visualization in Tableau</h3>
+<p>Import the Excel Sheet into Tableau and select “Data” worksheet as Data Source</p>
+<ol type="1">
+<li><p>Change Data Type<br />
+Change ‘Period’ data type from String to Date<br />
+Change ‘Import’ data type from String to Number (whole)<br />
+Change ‘Export’ data type from String to Number (whole)<br />
+<img src="img/DataType.png" style="width:50.0%" /></p></li>
+<li><p>Create a calculate field to show Net Export<br />
+Under Analysis &gt; ‘Create Calculated Field’ <strong>or</strong> Right Click on the left panel &gt; ‘Create Calculated Field’<br />
+<img src="img/CreateCalField.png" style="width:40.0%" /></p></li>
+<li><p>Input Calculated Field <strong>‘Net Export (S$)’</strong> Formula:<br />
+SUM([Import]) - SUM([Export])<br />
+<img src="img/NetExport.png" style="width:40.0%" /></p></li>
+<li><p>Create a line chart to display Net Export from Year 2019 Jan to Year 2020 Dec<br />
+Drag [Month(Period)] to Columns<br />
+Drag [AGG(Net Export(S$))] to Rows<br />
+<img src="img/RowCol.png" style="width:80.0%" /></p></li>
+<li><p>Separating Net Export data into Country level<br />
+Drag [Country] into ‘Details’ and ‘Label’<br />
+<img src="img/CountriesProperties.png" style="width:30.0%" /></p></li>
+<li><p>Add colors to differentiate positive or negative net export<br />
+Drag [AGG(Net Export(S$))] to ‘Color’ properties<br />
+<img src="img/AddColors.png" style="width:30.0%" /></p></li>
+<li><p>Formatting Colors<br />
+Once Step 5 is done, a color filter interface automatically appear in the right panel<br />
+Click on the down arrow &gt; Edit Colors…<br />
+<img src="img/FilterInterface.png" style="width:30.0%" /> <img src="img/EditColors.png" style="width:30.0%" /></p></li>
+</ol>
+<ul>
+<li>Under Palette &gt; Select ‘Red-Blue Diverging’</li>
+<li>Check ‘Use Full Color Range’</li>
+<li>Click on Advance &gt; Check Center and input 0 as the value<br />
+<img src="img/EditingColors.png" style="width:50.0%" /></li>
+</ul>
+<ol start="7" type="1">
+<li>Add Annotation<br />
+Right click on an empty space in the chart &gt; Annotate &gt; Area<br />
+<img src="img/Annotate.png" style="width:50.0%" /></li>
+</ol>
+<h1 id="final-visualization">5.0. Final Visualization</h1>
+<h3 id="snapshot-of-graph">5.1. Snapshot of Graph</h3>
+<p><img src="img/FinalViz.png" /></p>
+<h3 id="major-observation-andor-derived-insights">5.2. Major Observation and/or derived Insights</h3>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

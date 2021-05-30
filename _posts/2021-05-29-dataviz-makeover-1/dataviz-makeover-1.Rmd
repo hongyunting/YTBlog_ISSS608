@@ -9,6 +9,8 @@ date: 05-29-2021
 output:
   distill::distill_article:
     self_contained: false
+    toc: true
+    toc_depth: 3
 ---
 
 
@@ -16,11 +18,102 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-# 1.0 Critiques and alternative presentation
+# 1.0 Critiques and Proposed Solution
 
-## 1.1 Clarity
+### 1.1 Clarity
+
+No |Critiques          |Proposed Solution|
+---|-------------------|--------------------|
+1  | X-axis title labelled as Month of Period but the marker for x-axis is only showing years.| Shows the markers for months if the axis labelled months |
+2  | **Inconsistent Markers** - Japan only shows Year 2020 data, whereas the other countries show data from Year 2019 to end of Year 2020 | Data should be consistent throughout all countries for a fair comparison|
+3  | | |
+
+### 1.2 Aesthetics 
+No |Critiques          |Proposed Solution|
+---|-------------------|--------------------|
+1  |                    |                    |
+2  |                   |                    |
+
+# 2.0. Alternative Design
+![](img/AlternativeDesign.png)  
+
+### 2.1. Advantages of proposed design
+#### 2.1.1 Clarity
+i) Title tells a better story of what is to be expected from the graph and subtitle is used to annotate the overall chart
+ii) Instead of raw import and export data, this graph uses of Net Export formula (Export - Import) to illustrate the impact of Import and Export trades
 
 
-## 1.2 Aesthetics 
+#### 2.1.2 Aesthetics
+i) Aesthetically, a simple line chart shows a better trends between the 6 countries
 
+# 3.0. Proposed Data Visualization
+Actual Data Visualization can be viewed at 
 
+# 4.0. Data Visualisation Step-by-Step
+
+### 4.1. Data Preparation in Excel
+1. Filter out the 6 countries (Hong Kong, Mainland China, Japan, Malaysia, Taiwan and United States) from **Import** Worksheet.
+![](img/FilterCountries.png){width=100%}
+2. Retrieve data from Year 2019 Jan to Year 2020 Dec
+![](img/FilterPeriod.png){width=100%}
+3. Repeat Step 1 and 2 again for **Export** worksheet
+
+4. Consolidate the data into a new worksheet
+![](img/Consolidated.png){width=100%}
+
+5. Transpose data
+![](img/Transpose.png){width=90%}
+6. Reorganize data into a new worksheet (Data), consisting only 4 columns (Period, Country, Import and Export)
+![](img/ReorganizeData.png){width=80%}
+
+### 4.2. Data Visualization in Tableau
+
+Import the Excel Sheet into Tableau and select "Data" worksheet as Data Source
+
+1. Change Data Type  
+Change 'Period' data type from String to Date  
+Change 'Import' data type from String to Number (whole)  
+Change 'Export' data type from String to Number (whole)  
+![](img/DataType.png){width=50%}
+
+2. Create a calculate field to show Net Export  
+Under Analysis > 'Create Calculated Field' **or** Right Click on the left panel > 'Create Calculated Field'  
+![](img/CreateCalField.png){width=40%}  
+
+3. Input Calculated Field **'Net Export (S$)'** Formula:  
+SUM([Import]) - SUM([Export])  
+![](img/NetExport.png){width=40%}  
+
+4. Create a line chart to display Net Export from Year 2019 Jan to Year 2020 Dec  
+Drag [Month(Period)] to Columns  
+Drag [AGG(Net Export(S$))] to Rows  
+![](img/RowCol.png){width=80%}
+
+5. Separating Net Export data into Country level  
+Drag [Country] into 'Details' and 'Label'  
+![](img/CountriesProperties.png){width=30%}  
+
+5. Add colors to differentiate positive or negative net export  
+Drag [AGG(Net Export(S$))] to 'Color' properties  
+![](img/AddColors.png){width=30%}  
+
+6. Formatting Colors  
+Once Step 5 is done, a color filter interface automatically appear in the right panel  
+Click on the down arrow > Edit Colors...  
+![](img/FilterInterface.png){width=30%}  ![](img/EditColors.png){width=30%}  
+
+* Under Palette > Select 'Red-Blue Diverging'
+* Check 'Use Full Color Range'
+* Click on Advance > Check Center and input 0 as the value  
+![](img/EditingColors.png){width=50%} 
+
+7. Add Annotation  
+Right click on an empty space in the chart > Annotate > Area  
+![](img/Annotate.png){width=50%} 
+
+# 5.0. Final Visualization
+
+### 5.1. Snapshot of Graph
+![](img/FinalViz.png)
+
+### 5.2. Major Observation and/or derived Insights
