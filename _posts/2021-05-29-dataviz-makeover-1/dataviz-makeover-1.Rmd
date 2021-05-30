@@ -1,7 +1,8 @@
 ---
 title: "DataViz Makeover 1"
 description: |
-  A short description of the post.
+  SMU ISSS608 DataViz Makeover 1: 
+  Data Visualization on Mechandise Trade by Region/Market
 author:
   - name: Hong, Yun Ting
     url: https://www.linkedin.com/in/yuntinghong/
@@ -47,7 +48,9 @@ ii) Instead of raw import and export data, this graph uses of Net Export formula
 i) Aesthetically, a simple line chart shows a better trends between the 6 countries
 
 # 3.0. Proposed Data Visualization
-Actual Data Visualization can be viewed at 
+Raw data are available at [**DoSS**](https://www.singstat.gov.sg/find-data/search-by-theme/trade-and-investment/merchandise-trade/latest-data), under sub-section of Merchandise Trade by Region/Market.  
+Actual Data Visualization can be viewed at Tableau Public 
+[**here**](https://public.tableau.com/views/MerchandiseTrade_16223527793400/NetExport?:language=en-US&:display_count=n&:origin=viz_share_link)
 
 # 4.0. Data Visualisation Step-by-Step
 

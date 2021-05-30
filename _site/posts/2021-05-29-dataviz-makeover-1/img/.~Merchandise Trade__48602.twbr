@@ -1,15 +1,17 @@
 <?xml version='1.0' encoding='utf-8' ?>
 
 <!-- build 20211.21.0420.1112                               -->
-<workbook source-build='2021.1.1 (20211.21.0420.1112)' source-platform='mac' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+<workbook source-build='2021.1.1 (20211.21.0420.1112)' source-platform='mac' version='18.1' xml:base='https://public.tableau.com' xmlns:user='http://www.tableausoftware.com/xml/user'>
   <document-format-change-manifest>
     <_.fcp.MarkAnimation.true...MarkAnimation />
     <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelExtractV2.true...ObjectModelExtractV2 />
     <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
     <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
     <SheetIdentifierTracking />
     <WindowsPersistSimpleIdentifiers />
   </document-format-change-manifest>
+  <repository-location id='MerchandiseTrade_16223527793400' path='/workbooks' revision='1.0' />
   <preferences>
     <preference name='ui.encoding.shelf.height' value='24' />
     <preference name='ui.shelf.height' value='26' />
@@ -19,12 +21,12 @@
       <connection class='federated'>
         <named-connections>
           <named-connection caption='outputFile' name='excel-direct.1nv42d70idlupy11ahqis0lodsb5'>
-            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='/Users/yuntinghong/Documents/SMU/ISSS608 - Visual Analytics/Assignment/DataViz Makeover 1/outputFile.xlsx' interpretationMode='0' password='' server='' validate='no' />
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='/Users/yuntinghong/Documents/SMU/ISSS608 - Visual Analytics/Assignment/DataViz Makeover 1/outputFile.xlsx' interpretationMode='0' password='' server='' validate='no' workgroup-auth-mode='as-is' />
           </named-connection>
         </named-connections>
         <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='excel-direct.1nv42d70idlupy11ahqis0lodsb5' name='Data' table='[Data$]' type='table'>
           <columns gridOrigin='A1:D145:no:A1:D145:0' header='yes' outcome='2'>
-            <column datatype='date' date-parse-format='yyyy MMM' name='Date' ordinal='0' />
+            <column datatype='date' date-parse-format='yyyy MMM' name='Period' ordinal='0' />
             <column datatype='string' name='Country' ordinal='1' />
             <column datatype='integer' name='Import' ordinal='2' />
             <column datatype='integer' name='Export' ordinal='3' />
@@ -32,7 +34,7 @@
         </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
         <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='excel-direct.1nv42d70idlupy11ahqis0lodsb5' name='Data' table='[Data$]' type='table'>
           <columns gridOrigin='A1:D145:no:A1:D145:0' header='yes' outcome='2'>
-            <column datatype='date' date-parse-format='yyyy MMM' name='Date' ordinal='0' />
+            <column datatype='date' date-parse-format='yyyy MMM' name='Period' ordinal='0' />
             <column datatype='string' name='Country' ordinal='1' />
             <column datatype='integer' name='Import' ordinal='2' />
             <column datatype='integer' name='Export' ordinal='3' />
@@ -47,23 +49,24 @@
             <aggregation>Count</aggregation>
             <contains-null>true</contains-null>
             <attributes>
-              <attribute datatype='integer' name='context'>5</attribute>
+              <attribute datatype='integer' name='context'>2</attribute>
               <attribute datatype='string' name='gridOrigin'>&quot;A1:D145:no:A1:D145:0&quot;</attribute>
               <attribute datatype='boolean' name='header'>true</attribute>
               <attribute datatype='integer' name='outcome'>2</attribute>
             </attributes>
           </metadata-record>
           <metadata-record class='column'>
-            <remote-name>Date</remote-name>
+            <remote-name>Period</remote-name>
             <remote-type>7</remote-type>
-            <local-name>[Date]</local-name>
+            <local-name>[Period]</local-name>
             <parent-name>[Data]</parent-name>
-            <remote-alias>Date</remote-alias>
+            <remote-alias>Period</remote-alias>
             <ordinal>0</ordinal>
             <local-type>date</local-type>
             <aggregation>Year</aggregation>
             <contains-null>true</contains-null>
             <collation flag='1' name='LEN_RSG_S2' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Data_B0A807F7BD7D453FA90E6B28CF9EB3D1]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>Country</remote-name>
@@ -79,6 +82,7 @@
             <attributes>
               <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
             </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Data_B0A807F7BD7D453FA90E6B28CF9EB3D1]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>Import</remote-name>
@@ -93,6 +97,7 @@
             <attributes>
               <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
             </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Data_B0A807F7BD7D453FA90E6B28CF9EB3D1]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>Export</remote-name>
@@ -107,6 +112,7 @@
             <attributes>
               <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
             </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Data_B0A807F7BD7D453FA90E6B28CF9EB3D1]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
           </metadata-record>
         </metadata-records>
       </connection>
@@ -115,12 +121,72 @@
         <calculation class='tableau' formula='SUM([Import])-SUM([Export])' />
       </column>
       <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
-      <column caption='Period' datatype='date' name='[Date]' role='dimension' type='ordinal' />
       <column datatype='integer' name='[Export]' role='dimension' type='ordinal' />
       <column datatype='integer' name='[Import]' role='dimension' type='ordinal' />
       <_.fcp.ObjectModelTableType.true...column caption='Data' datatype='table' name='[__tableau_internal_object_id__].[Data_B0A807F7BD7D453FA90E6B28CF9EB3D1]' role='measure' type='quantitative' />
       <column-instance column='[Export]' derivation='Sum' name='[sum:Export:qk]' pivot='key' type='quantitative' />
       <column-instance column='[Import]' derivation='Sum' name='[sum:Import:qk]' pivot='key' type='quantitative' />
+      <extract _.fcp.ObjectModelExtractV2.true...object-id='' count='-1' enabled='true' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='/Users/yuntinghong/Documents/SMU/ISSS608 - Visual Analytics/Assignment/DataViz Makeover 1/Data (outputFile).hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='' username='tableau_internal_user'>
+          <_.fcp.ObjectModelEncapsulateLegacy.false...relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <_.fcp.ObjectModelEncapsulateLegacy.true...relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>Period</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[Period]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Period</remote-alias>
+              <ordinal>0</ordinal>
+              <family>Data</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>24</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Country</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Country]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Country</remote-alias>
+              <ordinal>1</ordinal>
+              <family>Data</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RSG_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Import</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Import]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Import</remote-alias>
+              <ordinal>2</ordinal>
+              <family>Data</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>144</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Export</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Export]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Export</remote-alias>
+              <ordinal>3</ordinal>
+              <family>Data</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>144</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
       <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
       <style>
         <style-rule element='mark'>
@@ -143,117 +209,15 @@
             <properties context=''>
               <relation connection='excel-direct.1nv42d70idlupy11ahqis0lodsb5' name='Data' table='[Data$]' type='table'>
                 <columns gridOrigin='A1:D145:no:A1:D145:0' header='yes' outcome='2'>
-                  <column datatype='date' date-parse-format='yyyy MMM' name='Date' ordinal='0' />
+                  <column datatype='date' date-parse-format='yyyy MMM' name='Period' ordinal='0' />
                   <column datatype='string' name='Country' ordinal='1' />
                   <column datatype='integer' name='Import' ordinal='2' />
                   <column datatype='integer' name='Export' ordinal='3' />
                 </columns>
               </relation>
             </properties>
-          </object>
-        </objects>
-      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
-    </datasource>
-    <datasource inline='true' name='Clipboard_20210530T131439' version='18.1'>
-      <connection class='federated'>
-        <named-connections>
-          <named-connection caption='Clipboard_20210530T131439' name='Clipboard_20210530T131439leaf'>
-            <connection class='textscan' directory='/var/folders/td/wg1_r7dj597ftgmp083gnp500000gn/T/tableau-temp/1nn23851tfpljq1ghiu3q19vpa9l' filename='Clipboard_20210530T131439.txt' temporary='yes' />
-          </named-connection>
-        </named-connections>
-        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='Clipboard_20210530T131439leaf' name='Clipboard_20210530T131439#txt' table='[Clipboard_20210530T131439#txt]' type='table'>
-          <columns character-set='UTF-8' header='yes' locale='en_SG' separator='&#9;'>
-            <column datatype='string' name='Country' ordinal='0' />
-            <column datatype='string' name='Month of Period' ordinal='1' />
-            <column datatype='integer' name='Net Export (S$)' ordinal='2' />
-          </columns>
-        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
-        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='Clipboard_20210530T131439leaf' name='Clipboard_20210530T131439#txt' table='[Clipboard_20210530T131439#txt]' type='table'>
-          <columns character-set='UTF-8' header='yes' locale='en_SG' separator='&#9;'>
-            <column datatype='string' name='Country' ordinal='0' />
-            <column datatype='string' name='Month of Period' ordinal='1' />
-            <column datatype='integer' name='Net Export (S$)' ordinal='2' />
-          </columns>
-        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
-        <metadata-records>
-          <metadata-record class='capability'>
-            <remote-name />
-            <remote-type>0</remote-type>
-            <parent-name>[Clipboard_20210530T131439#txt]</parent-name>
-            <remote-alias />
-            <aggregation>Count</aggregation>
-            <contains-null>true</contains-null>
-            <attributes>
-              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
-              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
-              <attribute datatype='string' name='field-delimiter'>&quot;\\t&quot;</attribute>
-              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
-              <attribute datatype='string' name='locale'>&quot;en_SG&quot;</attribute>
-              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
-            </attributes>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>Country</remote-name>
-            <remote-type>129</remote-type>
-            <local-name>[Country]</local-name>
-            <parent-name>[Clipboard_20210530T131439#txt]</parent-name>
-            <remote-alias>Country</remote-alias>
-            <ordinal>0</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <scale>1</scale>
-            <width>1073741823</width>
-            <contains-null>true</contains-null>
-            <collation flag='0' name='LEN_RGB' />
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Clipboard_20210530T131439]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>Month of Period</remote-name>
-            <remote-type>129</remote-type>
-            <local-name>[Month of Period]</local-name>
-            <parent-name>[Clipboard_20210530T131439#txt]</parent-name>
-            <remote-alias>Month of Period</remote-alias>
-            <ordinal>1</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <scale>1</scale>
-            <width>1073741823</width>
-            <contains-null>true</contains-null>
-            <collation flag='0' name='LEN_RGB' />
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Clipboard_20210530T131439]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>Net Export (S$)</remote-name>
-            <remote-type>20</remote-type>
-            <local-name>[Net Export (S$)]</local-name>
-            <parent-name>[Clipboard_20210530T131439#txt]</parent-name>
-            <remote-alias>Net Export (S$)</remote-alias>
-            <ordinal>2</ordinal>
-            <local-type>integer</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Clipboard_20210530T131439]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-        </metadata-records>
-      </connection>
-      <aliases enabled='yes' />
-      <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
-      <_.fcp.ObjectModelTableType.true...column caption='Clipboard_20210530T131439' datatype='table' name='[__tableau_internal_object_id__].[Clipboard_20210530T131439]' role='measure' type='quantitative' />
-      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
-      <semantic-values>
-        <semantic-value key='[Country].[Name]' value='&quot;Singapore&quot;' />
-      </semantic-values>
-      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
-        <objects>
-          <object caption='Clipboard_20210530T131439' id='Clipboard_20210530T131439'>
-            <properties context=''>
-              <relation connection='Clipboard_20210530T131439leaf' name='Clipboard_20210530T131439#txt' table='[Clipboard_20210530T131439#txt]' type='table'>
-                <columns character-set='UTF-8' header='yes' locale='en_SG' separator='&#9;'>
-                  <column datatype='string' name='Country' ordinal='0' />
-                  <column datatype='string' name='Month of Period' ordinal='1' />
-                  <column datatype='integer' name='Net Export (S$)' ordinal='2' />
-                </columns>
-              </relation>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
             </properties>
           </object>
         </objects>
@@ -281,11 +245,11 @@
               <calculation class='tableau' formula='SUM([Import])-SUM([Export])' />
             </column>
             <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
-            <column caption='Period' datatype='date' name='[Date]' role='dimension' type='ordinal' />
             <column datatype='integer' name='[Export]' role='dimension' type='ordinal' />
             <column datatype='integer' name='[Import]' role='dimension' type='ordinal' />
+            <column datatype='date' name='[Period]' role='dimension' type='ordinal' />
             <column-instance column='[Country]' derivation='None' name='[none:Country:nk]' pivot='key' type='nominal' />
-            <column-instance column='[Date]' derivation='Month-Trunc' name='[tmn:Date:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Period]' derivation='Month-Trunc' name='[tmn:Period:qk]' pivot='key' type='quantitative' />
             <column-instance column='[Calculation_3420061752388268037]' derivation='User' name='[usr:Calculation_3420061752388268037:qk]' pivot='key' type='quantitative' />
           </datasource-dependencies>
           <aggregation value='true' />
@@ -321,14 +285,14 @@
           </pane>
         </panes>
         <rows>[federated.0529vj11n6575t11jtohg1b2fock].[usr:Calculation_3420061752388268037:qk]</rows>
-        <cols>[federated.0529vj11n6575t11jtohg1b2fock].[tmn:Date:qk]</cols>
+        <cols>[federated.0529vj11n6575t11jtohg1b2fock].[tmn:Period:qk]</cols>
         <mark-labels>
           <mark-label id='0'>
             <tuple-reference>
               <tuple-descriptor>
                 <pane-descriptor>
                   <x-fields>
-                    <field>[federated.0529vj11n6575t11jtohg1b2fock].[tmn:Date:qk]</field>
+                    <field>[federated.0529vj11n6575t11jtohg1b2fock].[tmn:Period:qk]</field>
                   </x-fields>
                   <y-fields>
                     <field>[federated.0529vj11n6575t11jtohg1b2fock].[usr:Calculation_3420061752388268037:qk]</field>
@@ -336,7 +300,7 @@
                 </pane-descriptor>
                 <columns>
                   <field>[federated.0529vj11n6575t11jtohg1b2fock].[none:Country:nk]</field>
-                  <field>[federated.0529vj11n6575t11jtohg1b2fock].[tmn:Date:qk]</field>
+                  <field>[federated.0529vj11n6575t11jtohg1b2fock].[tmn:Period:qk]</field>
                   <field>[federated.0529vj11n6575t11jtohg1b2fock].[usr:Calculation_3420061752388268037:qk]</field>
                 </columns>
               </tuple-descriptor>
@@ -346,22 +310,22 @@
                 <value>-888507</value>
               </tuple>
             </tuple-reference>
-            <label-position x='-5' y='23' />
+            <label-position x='-5' y='25' />
           </mark-label>
         </mark-labels>
         <annotations>
-          <annotation class='area' id='7' text-pinx='0.5' text-piny='0.5' text-width-delta='-18'>
+          <annotation class='area' id='0' text-pinx='0.5' text-piny='0.5' text-width-delta='-18'>
             <formatted-text>
-              <run bold='true' fontalignment='0' fontsize='8'>China&apos;s net export decrease S$2M in August 2019 and 2020</run>
+              <run fontsize='8'>China&apos;s net export decrease S$2M in August 2019 and 2020</run>
             </formatted-text>
             <top-left>
               <visual-coordinate class='axis'>
-                <x-coord axis-value='#2019-09-20 15:57:20.627#'>
+                <x-coord axis-value='#2019-09-12 06:11:50.848#'>
                   <node-reference>
-                    <axis>[federated.0529vj11n6575t11jtohg1b2fock].[tmn:Date:qk]</axis>
+                    <axis>[federated.0529vj11n6575t11jtohg1b2fock].[tmn:Period:qk]</axis>
                   </node-reference>
                 </x-coord>
-                <y-coord axis-value='-1856099.9276595744'>
+                <y-coord axis-value='-1668139.5256124716'>
                   <node-reference>
                     <axis>[federated.0529vj11n6575t11jtohg1b2fock].[usr:Calculation_3420061752388268037:qk]</axis>
                   </node-reference>
@@ -371,12 +335,48 @@
             </top-left>
             <bottom-right>
               <visual-coordinate class='axis'>
-                <x-coord axis-value='#2020-04-02 21:13:52.165#'>
+                <x-coord axis-value='#2020-04-01 22:48:48.857#'>
                   <node-reference>
-                    <axis>[federated.0529vj11n6575t11jtohg1b2fock].[tmn:Date:qk]</axis>
+                    <axis>[federated.0529vj11n6575t11jtohg1b2fock].[tmn:Period:qk]</axis>
                   </node-reference>
                 </x-coord>
-                <y-coord axis-value='-2759561.7191489362'>
+                <y-coord axis-value='-2614107.3340757242'>
+                  <node-reference>
+                    <axis>[federated.0529vj11n6575t11jtohg1b2fock].[usr:Calculation_3420061752388268037:qk]</axis>
+                  </node-reference>
+                </y-coord>
+                <page-reference />
+              </visual-coordinate>
+            </bottom-right>
+            <text x='0.5' y='0.5' />
+          </annotation>
+          <annotation class='area' id='1' text-pinx='0.5' text-piny='0.5' text-width-delta='-18'>
+            <formatted-text>
+              <run fontsize='8'>Hong Kong is consistently on a deficit of more than S$4M</run>
+            </formatted-text>
+            <top-left>
+              <visual-coordinate class='axis'>
+                <x-coord axis-value='#2020-06-27 19:38:56.575#'>
+                  <node-reference>
+                    <axis>[federated.0529vj11n6575t11jtohg1b2fock].[tmn:Period:qk]</axis>
+                  </node-reference>
+                </x-coord>
+                <y-coord axis-value='-2710634.6614699336'>
+                  <node-reference>
+                    <axis>[federated.0529vj11n6575t11jtohg1b2fock].[usr:Calculation_3420061752388268037:qk]</axis>
+                  </node-reference>
+                </y-coord>
+                <page-reference />
+              </visual-coordinate>
+            </top-left>
+            <bottom-right>
+              <visual-coordinate class='axis'>
+                <x-coord axis-value='#2020-09-29 05:24:27.454#'>
+                  <node-reference>
+                    <axis>[federated.0529vj11n6575t11jtohg1b2fock].[tmn:Period:qk]</axis>
+                  </node-reference>
+                </x-coord>
+                <y-coord axis-value='-4641181.2093541203'>
                   <node-reference>
                     <axis>[federated.0529vj11n6575t11jtohg1b2fock].[usr:Calculation_3420061752388268037:qk]</axis>
                   </node-reference>
@@ -389,87 +389,6 @@
         </annotations>
       </table>
       <simple-id uuid='{A50166B2-D625-42F8-A277-DAC18B4A247D}' />
-    </worksheet>
-    <worksheet name='Sheet 1'>
-      <layout-options>
-        <title>
-          <formatted-text>
-            <run>Merchandise Trade of the Top Six Trading Countries, 2019 - 2020</run>
-          </formatted-text>
-        </title>
-      </layout-options>
-      <table>
-        <view>
-          <datasources>
-            <datasource caption='Data (outputFile)' name='federated.0529vj11n6575t11jtohg1b2fock' />
-          </datasources>
-          <datasource-dependencies datasource='federated.0529vj11n6575t11jtohg1b2fock'>
-            <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
-            <column caption='Period' datatype='date' name='[Date]' role='dimension' type='ordinal' />
-            <column datatype='integer' name='[Export]' role='dimension' type='ordinal' />
-            <column datatype='integer' name='[Import]' role='dimension' type='ordinal' />
-            <column-instance column='[Country]' derivation='None' name='[none:Country:nk]' pivot='key' type='nominal' />
-            <column-instance column='[Export]' derivation='Sum' name='[sum:Export:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[Import]' derivation='Sum' name='[sum:Import:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[Date]' derivation='Month-Trunc' name='[tmn:Date:qk]' pivot='key' type='quantitative' />
-          </datasource-dependencies>
-          <aggregation value='true' />
-        </view>
-        <style>
-          <style-rule element='axis'>
-            <encoding attr='space' class='0' field='[federated.0529vj11n6575t11jtohg1b2fock].[sum:Export:qk]' field-type='quantitative' fold='true' scope='rows' type='space' />
-            <format attr='title' class='0' field='[federated.0529vj11n6575t11jtohg1b2fock].[sum:Import:qk]' scope='rows' value='Import' />
-            <format attr='title' class='0' field='[federated.0529vj11n6575t11jtohg1b2fock].[sum:Export:qk]' scope='rows' value='Export' />
-          </style-rule>
-          <style-rule element='worksheet'>
-            <format attr='display-field-labels' scope='cols' value='false' />
-          </style-rule>
-        </style>
-        <panes>
-          <pane id='1' selection-relaxation-option='selection-relaxation-allow'>
-            <view>
-              <breakdown value='auto' />
-            </view>
-            <mark class='Line' />
-            <style>
-              <style-rule element='mark'>
-                <format attr='mark-labels-cull' value='true' />
-                <format attr='mark-labels-show' value='false' />
-              </style-rule>
-            </style>
-          </pane>
-          <pane id='2' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.0529vj11n6575t11jtohg1b2fock].[sum:Export:qk]'>
-            <view>
-              <breakdown value='auto' />
-            </view>
-            <mark class='Line' />
-            <style>
-              <style-rule element='mark'>
-                <format attr='mark-color' value='#e15759' />
-                <format attr='mark-labels-cull' value='true' />
-                <format attr='mark-labels-show' value='false' />
-              </style-rule>
-            </style>
-          </pane>
-          <pane id='3' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.0529vj11n6575t11jtohg1b2fock].[sum:Import:qk]'>
-            <view>
-              <breakdown value='auto' />
-            </view>
-            <mark class='Line' />
-            <style>
-              <style-rule element='mark'>
-                <format attr='mark-color' value='#33659b' />
-                <format attr='mark-labels-cull' value='true' />
-                <format attr='mark-labels-show' value='false' />
-                <format attr='mark-markers-mode' value='none' />
-              </style-rule>
-            </style>
-          </pane>
-        </panes>
-        <rows>([federated.0529vj11n6575t11jtohg1b2fock].[sum:Import:qk] + [federated.0529vj11n6575t11jtohg1b2fock].[sum:Export:qk])</rows>
-        <cols>([federated.0529vj11n6575t11jtohg1b2fock].[none:Country:nk] * [federated.0529vj11n6575t11jtohg1b2fock].[tmn:Date:qk])</cols>
-      </table>
-      <simple-id uuid='{F8BB2F37-5B0E-4137-807C-F5CC2B2B468A}' />
     </worksheet>
     <worksheet name='Sheet 2'>
       <table>
@@ -491,159 +410,9 @@
       </table>
       <simple-id uuid='{472F5EB0-C545-4EC2-AC84-E35E3368854A}' />
     </worksheet>
-    <worksheet name='Sheet 5'>
-      <table>
-        <view>
-          <datasources>
-            <datasource name='Clipboard_20210530T131439' />
-          </datasources>
-          <datasource-dependencies datasource='Clipboard_20210530T131439'>
-            <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
-            <column datatype='string' name='[Month of Period]' role='dimension' type='nominal' />
-            <column datatype='integer' name='[Net Export (S$)]' role='measure' type='quantitative' />
-            <column-instance column='[Country]' derivation='None' name='[none:Country:nk]' pivot='key' type='nominal' />
-            <column-instance column='[Month of Period]' derivation='None' name='[none:Month of Period:nk]' pivot='key' type='nominal' />
-            <column-instance column='[Net Export (S$)]' derivation='Sum' name='[sum:Net Export (S$):qk]' pivot='key' type='quantitative' />
-          </datasource-dependencies>
-          <aggregation value='true' />
-        </view>
-        <style />
-        <panes>
-          <pane selection-relaxation-option='selection-relaxation-allow'>
-            <view>
-              <breakdown value='auto' />
-            </view>
-            <mark class='Automatic' />
-            <encodings>
-              <text column='[Clipboard_20210530T131439].[sum:Net Export (S$):qk]' />
-            </encodings>
-          </pane>
-        </panes>
-        <rows>([Clipboard_20210530T131439].[none:Country:nk] / [Clipboard_20210530T131439].[none:Month of Period:nk])</rows>
-        <cols />
-      </table>
-      <simple-id uuid='{CF85D4E8-0A68-45BC-844C-15290468479F}' />
-    </worksheet>
-    <worksheet name='Top 6'>
-      <layout-options>
-        <title>
-          <formatted-text>
-            <run>Singapore experiencing high trade surplus with Taiwan and high trade deficit with Hong Kong from 2019 to 2020</run>
-          </formatted-text>
-        </title>
-      </layout-options>
-      <table>
-        <view>
-          <datasources>
-            <datasource caption='Data (outputFile)' name='federated.0529vj11n6575t11jtohg1b2fock' />
-          </datasources>
-          <datasource-dependencies datasource='federated.0529vj11n6575t11jtohg1b2fock'>
-            <column caption='Net Export (S$)' datatype='integer' name='[Calculation_3420061752388268037]' role='measure' type='quantitative'>
-              <calculation class='tableau' formula='SUM([Import])-SUM([Export])' />
-            </column>
-            <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
-            <column caption='Period' datatype='date' name='[Date]' role='dimension' type='ordinal' />
-            <column datatype='integer' name='[Export]' role='dimension' type='ordinal' />
-            <column datatype='integer' name='[Import]' role='dimension' type='ordinal' />
-            <column-instance column='[Country]' derivation='None' name='[none:Country:nk]' pivot='key' type='nominal' />
-            <column-instance column='[Date]' derivation='Month-Trunc' name='[tmn:Date:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[Calculation_3420061752388268037]' derivation='User' name='[usr:Calculation_3420061752388268037:qk]' pivot='key' type='quantitative' />
-          </datasource-dependencies>
-          <aggregation value='true' />
-        </view>
-        <style>
-          <style-rule element='mark'>
-            <encoding attr='color' center='0' field='[federated.0529vj11n6575t11jtohg1b2fock].[usr:Calculation_3420061752388268037:qk]' palette='red_blue_diverging_10_0' symmetric='false' type='interpolated' />
-          </style-rule>
-          <style-rule element='worksheet'>
-            <format attr='display-field-labels' scope='cols' value='false' />
-          </style-rule>
-        </style>
-        <panes>
-          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
-            <view>
-              <breakdown value='auto' />
-            </view>
-            <mark class='Line' />
-            <mark-sizing mark-sizing-setting='marks-scaling-off' />
-            <encodings>
-              <color column='[federated.0529vj11n6575t11jtohg1b2fock].[usr:Calculation_3420061752388268037:qk]' />
-            </encodings>
-            <style>
-              <style-rule element='mark'>
-                <format attr='mark-color' value='#33659b' />
-                <format attr='mark-labels-cull' value='true' />
-                <format attr='mark-labels-show' value='false' />
-                <format attr='size' value='0.82359117269515991' />
-              </style-rule>
-            </style>
-          </pane>
-        </panes>
-        <rows>[federated.0529vj11n6575t11jtohg1b2fock].[usr:Calculation_3420061752388268037:qk]</rows>
-        <cols>([federated.0529vj11n6575t11jtohg1b2fock].[none:Country:nk] * [federated.0529vj11n6575t11jtohg1b2fock].[tmn:Date:qk])</cols>
-      </table>
-      <simple-id uuid='{34F4F1E0-0A7C-4DF6-82E3-8AE9F75C5C5D}' />
-    </worksheet>
   </worksheets>
-  <windows source-height='51'>
-    <window class='worksheet' name='Sheet 1'>
-      <cards>
-        <edge name='left'>
-          <strip size='160'>
-            <card type='pages' />
-            <card type='filters' />
-            <card type='marks' />
-          </strip>
-        </edge>
-        <edge name='top'>
-          <strip size='2147483647'>
-            <card type='columns' />
-          </strip>
-          <strip size='2147483647'>
-            <card type='rows' />
-          </strip>
-          <strip size='31'>
-            <card type='title' />
-          </strip>
-        </edge>
-      </cards>
-      <viewpoint>
-        <zoom type='fit-height' />
-      </viewpoint>
-      <simple-id uuid='{45AED28E-2EA6-4161-8A28-5982DAEAF569}' />
-    </window>
-    <window class='worksheet' name='Top 6'>
-      <cards>
-        <edge name='left'>
-          <strip size='160'>
-            <card type='pages' />
-            <card type='filters' />
-            <card type='marks' />
-          </strip>
-        </edge>
-        <edge name='top'>
-          <strip size='2147483647'>
-            <card type='columns' />
-          </strip>
-          <strip size='2147483647'>
-            <card type='rows' />
-          </strip>
-          <strip size='31'>
-            <card type='title' />
-          </strip>
-        </edge>
-        <edge name='right'>
-          <strip size='160'>
-            <card pane-specification-id='2' param='[federated.0529vj11n6575t11jtohg1b2fock].[usr:Calculation_3420061752388268037:qk]' type='color' />
-          </strip>
-        </edge>
-      </cards>
-      <viewpoint>
-        <zoom type='fit-height' />
-      </viewpoint>
-      <simple-id uuid='{C504C13A-8C98-445D-B074-A72D92CDA3F3}' />
-    </window>
-    <window class='worksheet' name='Net Export'>
+  <windows source-height='30'>
+    <window class='worksheet' maximized='true' name='Net Export'>
       <cards>
         <edge name='left'>
           <strip size='192'>
@@ -696,29 +465,6 @@
         </edge>
       </cards>
       <simple-id uuid='{1144D9E7-BCBF-433F-8668-576ABB67B8CB}' />
-    </window>
-    <window class='worksheet' maximized='true' name='Sheet 5'>
-      <cards>
-        <edge name='left'>
-          <strip size='160'>
-            <card type='pages' />
-            <card type='filters' />
-            <card type='marks' />
-          </strip>
-        </edge>
-        <edge name='top'>
-          <strip size='31'>
-            <card type='columns' />
-          </strip>
-          <strip size='31'>
-            <card type='rows' />
-          </strip>
-          <strip size='31'>
-            <card type='title' />
-          </strip>
-        </edge>
-      </cards>
-      <simple-id uuid='{344145B3-51AA-4999-B928-2B4A8576A8BE}' />
     </window>
   </windows>
 </workbook>
