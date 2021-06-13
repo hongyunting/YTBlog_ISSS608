@@ -1,0 +1,36 @@
+---
+title: "DataViz Makeover 2"
+description: |
+  SMU ISSS608 DataViz Makeover 2: Exploring different prespective on Merchandise Trade with Partnering Markets
+author:
+  - name: Hong, Yun Ting
+    url: https://www.linkedin.com/in/yuntinghong/
+date: 06-13-2021
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# 1.0 Critiques on the original design
+### 1.1 Clarity
+### 1.2 Aesthetics 
+
+# 2.0. Alternative Design
+### 2.1. Advantages of proposed design
+#### 2.1.1 Clarity
+#### 2.1.2 Aesthetics
+
+# 3.0. Proposed Data Visualization
+
+# 4.0. Data Visualisation Step-by-Step
+### 4.1. Data Preparation in Excel
+
+# 5.0. Final Visualization
+### 5.1. Snapshot of Graph
+### 5.2. Major Observation and/or derived Insights
+

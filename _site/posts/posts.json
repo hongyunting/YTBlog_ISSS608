@@ -1,5 +1,22 @@
 [
   {
+    "path": "posts/2021-06-13-dataviz-makeover-2/",
+    "title": "DataViz Makeover 2",
+    "description": "SMU ISSS608 DataViz Makeover 2: Exploring different prespective on Merchandise Trade with Partnering Markets",
+    "author": [
+      {
+        "name": "Hong, Yun Ting",
+        "url": "https://www.linkedin.com/in/yuntinghong/"
+      }
+    ],
+    "date": "2021-06-13",
+    "categories": [],
+    "contents": "\n1.0 Critiques on the original design\n1.1 Clarity\n1.2 Aesthetics\n2.0. Alternative Design\n2.1. Advantages of proposed design\n2.1.1 Clarity\n2.1.2 Aesthetics\n3.0. Proposed Data Visualization\n4.0. Data Visualisation Step-by-Step\n4.1. Data Preparation in Excel\n5.0. Final Visualization\n5.1. Snapshot of Graph\n5.2. Major Observation and/or derived Insights\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-06-13T22:21:18+08:00",
+    "input_file": {}
+  },
+  {
     "path": "posts/2021-05-29-dataviz-makeover-1/",
     "title": "DataViz Makeover 1",
     "description": "SMU ISSS608 DataViz Makeover 1: \nData Visualization on Mechandise Trade by Region/Market",
