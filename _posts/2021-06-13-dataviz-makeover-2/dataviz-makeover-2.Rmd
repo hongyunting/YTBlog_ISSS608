@@ -19,6 +19,11 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 
 # 1.0 Critiques on the original design
+
+This is the original design to illustrate Singapore's Merchandise Trade Performance with Major Partners in 2020
+![](img/Original.png){width=80%} 
+
+
 ### 1.1 Clarity
 ***(a) Incomplete axis labelling of both x-axis and y-axis:*** Although bubble chart label notation indicates 'Bil' (which means Billion), we are unclear if x-axis and y-axis are in 'Bil' units too as the units are missing from both x-axis and y-axis. Moreover, axis labelling (Import & Export) are placed at the bottom left corner of the chart which can cause confusion as to which axis is Import and Export. This can be improved by placing it at the end of the axis instead.  
 
@@ -31,14 +36,32 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ***(b) No focus area is highlighted:*** The bubble chart aesthetics are colorful, However, the graph looks cluttered and no focus point. Instead of using solid colors for all partners and introducing additional symbols into the chart with side note, the bubble chart colors should be darker for Taiwan and Hong Kong to bring the focus on this 2 partners and a lighter color for the rest and a small text notation beside Taiwan and Hong Kong to indicate Top Net Importer/Exporter
 
-***(c) :***
+***(c) Interactive Design does not have much feature: *** This chart is an interactive chart, however, if we are looking at multiple years, there is no features to view other years.
 
 # 2.0. Alternative Design
-### 2.1 Clarity
+![](img/Proposed Visualisation.png){width=100%} 
+
+### 2.1 Clarity 
+***(a) A Short Description in title section: *** Write a short description to describe what is kind of information is this chart protraying. For example, is it indicating Net Importer/Exporter or Total Merchandise Trade value. 
+
+***(b) Proper Labelling on x and y-axis: *** Since the data are revolving around billions unit, it is best to add the unit (B) to x and y axis's markers. 
+
+***(c) Add filter for interactive design: *** We are looking at a range of 10 years data, therefore it is best to have a year filter to navigate and see the transition from year to year for a better user experience. 
+
 ### 2.2 Aesthetics
+***(a) Introduce opacity to bubble chart:*** Add opacity level of 20-30% to introduce transparency to bubble chart in case of overlapping points. 
+
+***(b) Bubble chart color scheme: *** Intead of using different solid colors for different countries as per what DoSS has done, I introduce a red-blue diverging color scheme to different between Net Importer and Net Exporter. For points below the line will be colored closer o dark red and points above the line will be colored close to dark blue.
+
+***(c) Reduce the number of colors and symbols: *** As compared to the original graph from DoSS, it is flushed with numerous colors and there is no focus points. In my proposed visualisation, I opted for a simple and clean chart to protray the information. This way, it will not be too cluttered and would not confused the readers. 
 
 
 # 3.0. Proposed Data Visualization
+
+Raw data are available at [**DoSS**](https://www.singstat.gov.sg/find-data/search-by-theme/trade-and-investment/merchandise-trade/latest-data), under sub-section of Merchandise Trade by Region/Market.  
+Actual Data Visualization can be viewed at Tableau Public 
+[**here**](https://public.tableau.com/app/profile/hong.yun.ting/viz/DataVizMakeover2_16241905700430/NetImporterExporter)
+
 
 # 4.0. Data Visualisation Step-by-Step
 ### 4.1. Data Preparation with Excel and Tableau
@@ -271,6 +294,4 @@ Click on Alignment and Select Middle for Vertical Section. This will display cou
 Based on the data observed, Hong Kong has been consistently ranked as Singapore Top 1 Net Exporters from Year 2011 to 2020 and Indonesia is ranked Second in Net Exporters from 2011 to 2020 as well. Taiwan has gradually becoming one of Singapore Top Net Importers from 2011 to 2013 and has held Rank 1 for about 5 years before United States took it's place in Rank 1 for 2 years. 
 
 
-Whilst, Mainland China has been steadily ranked as the Singapore Top Importer and Exporter throughout the years,  with the highest total merchandise trade values of more than $13 billions in the last 10 years, followed by Malaysia of more than $13 billions.
-
-
+Whilst, Mainland China has been steadily ranked as the Singapore Top Importer and Exporter throughout the years,  with the highest total merchandise trade values of more than $13 billions in the last 10 years, followed by Malaysia of more than $13 billions. Thailand on the other hand has the lowest total merchandise trade values of less than $4 billions. 
