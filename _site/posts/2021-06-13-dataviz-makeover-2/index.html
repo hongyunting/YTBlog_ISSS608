@@ -112,12 +112,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["DataViz Makeover 2"]},{"type":"character","attributes":{},"value":["SMU ISSS608 DataViz Makeover 2: Exploring different prespective on Merchandise Trade with Partnering Markets"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Hong, Yun Ting"]},{"type":"character","attributes":{},"value":["https://www.linkedin.com/in/yuntinghong/"]}]}]},{"type":"character","attributes":{},"value":["06-13-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["DataViz Makeover 2"]},{"type":"character","attributes":{},"value":["SMU ISSS608 DataViz Makeover 2: Exploring different prespective on Merchandise Trade with Partnering Markets"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Hong, Yun Ting"]},{"type":"character","attributes":{},"value":["https://www.linkedin.com/in/yuntinghong/"]}]}]},{"type":"character","attributes":{},"value":["06-13-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc","toc_depth"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[3]}]}]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["dataviz-makeover-2_files/anchor-4.2.2/anchor.min.js","dataviz-makeover-2_files/bowser-1.9.3/bowser.min.js","dataviz-makeover-2_files/distill-2.2.21/template.v2.js","dataviz-makeover-2_files/jquery-1.11.3/jquery.min.js","dataviz-makeover-2_files/popper-2.6.0/popper.min.js","dataviz-makeover-2_files/tippy-6.2.7/tippy-bundle.umd.min.js","dataviz-makeover-2_files/tippy-6.2.7/tippy-light-border.css","dataviz-makeover-2_files/tippy-6.2.7/tippy.css","dataviz-makeover-2_files/tippy-6.2.7/tippy.umd.min.js","dataviz-makeover-2_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["dataviz-makeover-2_files/anchor-4.2.2/anchor.min.js","dataviz-makeover-2_files/bowser-1.9.3/bowser.min.js","dataviz-makeover-2_files/distill-2.2.21/template.v2.js","dataviz-makeover-2_files/jquery-1.11.3/jquery.min.js","dataviz-makeover-2_files/popper-2.6.0/popper.min.js","dataviz-makeover-2_files/tippy-6.2.7/tippy-bundle.umd.min.js","dataviz-makeover-2_files/tippy-6.2.7/tippy-light-border.css","dataviz-makeover-2_files/tippy-6.2.7/tippy.css","dataviz-makeover-2_files/tippy-6.2.7/tippy.umd.min.js","dataviz-makeover-2_files/webcomponents-2.0.0/webcomponents.js","img/Annotate.png","img/Bubble Size.png","img/Calculated Field.png","img/Change Filter Type.png","img/Color Full Range.png","img/Color Opacity.png","img/Copy and Paste 1.png","img/Copy and Paste 2.png","img/Country Label.png","img/Custom Split.png","img/Dual Axis.png","img/Edit Axis.png","img/Edit Bubble Color.png","img/Excel changeType.png","img/Excel Remove.png","img/Excel Rename.png","img/Excel Thousand.png","img/Export to CSV.png","img/Filter Country All.png","img/Filter Country.png","img/Filter NetValue All.png","img/Filter Period All.png","img/Filter Period.png","img/Filter Year.png","img/Final Chart.png","img/Final Data.png","img/Fixed Axis.png","img/Hide Columns.png","img/Import again.png","img/Import data.png","img/Import Next.png","img/Import&Export.png","img/Join.png","img/Merge.png","img/Net Importer Color.png","img/Net Importer.png","img/NetValue.png","img/Pivot Column.png","img/Red-Blue.png","img/Reference Line 2.png","img/Reference Line 3.png","img/Reference Line 4.png","img/Reference Line.png","img/RefLine remove Prop.png","img/Remove Filter - All.png","img/Rename Column.png","img/Save to XLSX.png","img/Show Filter.png","img/Split Separator.png","img/Tableau Filter Add.png","img/Tableau Filter Select.png","img/Tableau Filter Variable.png","img/Tableau Filter.png","img/Tableau Import.png","img/Total Import.png","img/Total Trade Amount.png","img/Trend Line 2.png","img/Trend Line.png","img/TrendLine Properties.png","img/Y axis start 0.png"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2097,19 +2097,241 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 
 <div class="d-article">
+<div class="d-contents d-contents-float">
+<nav class="l-text toc figcaption" id="TOC">
+<h3>Contents</h3>
+<ul>
+<li><a href="#critiques-on-the-original-design">1.0 Critiques on the original design</a><ul>
+<li><a href="#clarity">1.1 Clarity</a></li>
+<li><a href="#aesthetics">1.2 Aesthetics</a></li>
+</ul></li>
+<li><a href="#alternative-design">2.0. Alternative Design</a><ul>
+<li><a href="#clarity-1">2.1 Clarity</a></li>
+<li><a href="#aesthetics-1">2.2 Aesthetics</a></li>
+</ul></li>
+<li><a href="#proposed-data-visualization">3.0. Proposed Data Visualization</a></li>
+<li><a href="#data-visualisation-step-by-step">4.0. Data Visualisation Step-by-Step</a><ul>
+<li><a href="#data-preparation-with-excel-and-tableau">4.1. Data Preparation with Excel and Tableau</a></li>
+<li><a href="#creating-chart">4.2 Creating Chart</a></li>
+</ul></li>
+<li><a href="#final-visualization">5.0. Final Visualization</a><ul>
+<li><a href="#snapshot-of-graph">5.1. Snapshot of Graph</a></li>
+<li><a href="#major-observation-andor-derived-insights">5.2. Major Observation and/or derived Insights</a></li>
+</ul></li>
+</ul>
+</nav>
+</div>
 <h1 id="critiques-on-the-original-design">1.0 Critiques on the original design</h1>
 <h3 id="clarity">1.1 Clarity</h3>
+<p><strong><em>(a) Incomplete axis labelling of both x-axis and y-axis:</em></strong> Although bubble chart label notation indicates ‘Bil’ (which means Billion), we are unclear if x-axis and y-axis are in ‘Bil’ units too as the units are missing from both x-axis and y-axis. Moreover, axis labelling (Import &amp; Export) are placed at the bottom left corner of the chart which can cause confusion as to which axis is Import and Export. This can be improved by placing it at the end of the axis instead.</p>
+<p><strong><em>(b) Unclear label notation on bubble chart:</em></strong> Each countries are accompanied with a value label notation. However, we will not be able to differentiate whether this value is referring to total merchandise trade value or Net-Net value.</p>
+<p><strong><em>(c) Missing chart title: </em></strong> Title is missing from this chart and we are not able to determine what is this chart trying to tell us without looking at Department of Statistics website. We would not have known that this chart is a representation of Singapore Merchandise Trade Performance with majoring Partnering partners in which year or across which years.</p>
 <h3 id="aesthetics">1.2 Aesthetics</h3>
+<p><strong><em>(a) Bubble overlapping:</em></strong> This is a interactive bubble chart as seen in Department of Statistics website. However, at first glance or without interacting with the chart, we are unable to view all the white circles (which indicating whether is it Net-Exporter or Net-Importers). It is hidden by overlapping solid colored bubble. This aesthetic leads to the clarity of the chart.</p>
+<p><strong><em>(b) No focus area is highlighted:</em></strong> The bubble chart aesthetics are colorful, However, the graph looks cluttered and no focus point. Instead of using solid colors for all partners and introducing additional symbols into the chart with side note, the bubble chart colors should be darker for Taiwan and Hong Kong to bring the focus on this 2 partners and a lighter color for the rest and a small text notation beside Taiwan and Hong Kong to indicate Top Net Importer/Exporter</p>
+<p><strong><em>(c) :</em></strong></p>
 <h1 id="alternative-design">2.0. Alternative Design</h1>
-<h3 id="advantages-of-proposed-design">2.1. Advantages of proposed design</h3>
-<h4 id="clarity-1">2.1.1 Clarity</h4>
-<h4 id="aesthetics-1">2.1.2 Aesthetics</h4>
+<h3 id="clarity-1">2.1 Clarity</h3>
+<h3 id="aesthetics-1">2.2 Aesthetics</h3>
 <h1 id="proposed-data-visualization">3.0. Proposed Data Visualization</h1>
 <h1 id="data-visualisation-step-by-step">4.0. Data Visualisation Step-by-Step</h1>
-<h3 id="data-preparation-in-excel">4.1. Data Preparation in Excel</h3>
+<h3 id="data-preparation-with-excel-and-tableau">4.1. Data Preparation with Excel and Tableau</h3>
+<ol type="1">
+<li><p>Download and Open Excelsheet from DoSS</p></li>
+<li><p>Remove Unnecessary rows<br />
+<img src="img/Excel%20Remove.png" style="width:60.0%" /></p></li>
+<li><p>Rename worksheet T1 to ‘Import’ and T2 to ‘Export’</p></li>
+</ol>
+<p><img src="img/Excel%20Rename.png" style="width:40.0%" /></p>
+<ol start="4" type="1">
+<li>One of the partners which we are interested on is European Union. However, the data is in Text format and Billion dollars.</li>
+</ol>
+<ul>
+<li>Change the change from ‘Text’ to ‘Number’</li>
+</ul>
+<p><img src="img/Excel%20changeType.png" style="width:30.0%" /></p>
+<ul>
+<li>Create a new row in excel to convert European Union to Thousand Dollars unit. Input the formula (=IF(B7&lt;&gt;“na”, B7 * 1000, “na”)) and apply it to the whole row <img src="img/Excel%20Thousand.png" style="width:80.0%" /></li>
+</ul>
+<ol start="5" type="1">
+<li><p>Import the excel data into Tableau <img src="img/Tableau%20Import.png" style="width:80.0%" /></p></li>
+<li><p>Drag &amp; Drop “Import” Data Source into the blank space <img src="img/Import%20data.png" style="width:80.0%" /></p></li>
+<li><p>Proceed to Filter out the 10 Trading Partners (European Union, Hong Kong, Indonesia, Japan, Malaysia, Mainland China, Republic of Korea, Taiwan, Thailand, United States)</p></li>
+</ol>
+<ul>
+<li>Click on Filter at the top right hand corner <img src="img/Tableau%20Filter.png" style="width:80.0%" /></li>
+<li>Click on “Add” to select the variables of which we want to filter the data from <img src="img/Tableau%20Filter%20Add.png" style="width:80.0%" /><br />
+</li>
+<li>Select Variables (Which is essentially our trading partners) and Click OK <img src="img/Tableau%20Filter%20Variable.png" style="width:80.0%" /><br />
+</li>
+<li>Select the 10 trading partners (Be mindful to choose “European Union (Thousand Dollars)” instead of “European Union (Million Dollar)”) <img src="img/Tableau%20Filter%20Select.png" style="width:80.0%" /><br />
+</li>
+</ul>
+<ol start="8" type="1">
+<li>Separate out trading partner with dollar units</li>
+</ol>
+<ul>
+<li>Click on the little triangle and choose “Custom Split” <img src="img/Custom%20Split.png" style="width:80.0%" /></li>
+<li>Input “(” in ‘Use the Separator’ <img src="img/Split%20Separator.png" style="width:80.0%" /><br />
+</li>
+<li>Rename the newly created split column to your intended name by click on the little triangle &gt; Rename <img src="img/Rename%20Column.png" style="width:80.0%" /></li>
+</ul>
+<ol start="9" type="1">
+<li>Hide all unused columns</li>
+</ol>
+<ul>
+<li>Hold onto “Cntrl” key on the keyboard (“Command” for Mac) and select the year from 1976 Jan to 2010 Dec, 2021 Jan to 2021 May &gt; Click on the little triangle &gt; Hide <img src="img/Hide%20Columns.png" style="width:80.0%" /><br />
+</li>
+</ul>
+<ol start="10" type="1">
+<li>Re-arrange data such that Period are gathered in 1 single column, per country</li>
+</ol>
+<ul>
+<li>Hold down on Cntrl key and Select 2011 Jan to 2020 Dec &gt; Click on little triangle &gt; Pivot <img src="img/Pivot%20Column.png" style="width:80.0%" /></li>
+</ul>
+<ol start="11" type="1">
+<li><p>Save the edited data into a CSV file. Click on Sheet 1 at the bottom tab &gt; Right Click on the Data “Import(outputFile)” &gt; Export Data to CSV &gt; Export <img src="img/Export%20to%20CSV.png" style="width:80.0%" /></p></li>
+<li><p>Repeat Step 6 to 11 for “Export” trade Data</p></li>
+<li><p>The next step is to merge both “Import” and “Export” CSV trade data together</p></li>
+</ol>
+<ul>
+<li>Open “Export” CSV file, Copy and Paste it to a new worksheet in “Import” CSV file <img src="img/Copy%20and%20Paste%201.png" style="width:80.0%" /> <img src="img/Copy%20and%20Paste%202.png" style="width:80.0%" /></li>
+<li>Save the CSV file (Final_output.xlsx) as XLSX to save both worksheet into 1 excel file <img src="img/Save%20to%20XLSX.png" style="width:80.0%" /></li>
+</ul>
+<ol start="14" type="1">
+<li>Import (Final_output.xlsx) into Tableau <img src="img/Import%20again.png" style="width:80.0%" /></li>
+<li>Combine “Import” and “Export” worksheet into 1 datasource</li>
+</ol>
+<ul>
+<li><p>Double click on “Import” and the screen will display “Import is made of 1 table” <img src="img/Import%20Next.png" style="width:80.0%" /></p></li>
+<li><p>Drag &amp; Drop “Export” next to Import. A venn diagram symbol is created between “Import” and Export"</p></li>
+</ul>
+<p><img src="img/Join.png" style="width:80.0%" /></p>
+<h3 id="creating-chart">4.2 Creating Chart</h3>
+<ol type="1">
+<li><p>Navigate to a new sheet in Tableau.</p></li>
+<li><p>Create new parameters (Total Import and Total Export) Analysis &gt; Create Calculated Field For “Total Import”: SUM([Import Amt]) For “Total Export”: SUM([Export Amt]) <img src="img/Total%20Import.png" style="width:80.0%" /></p></li>
+<li><p>Drag &amp; Drop “Total Import” to Rows and “Total Export” to Columns <img src="img/Import&amp;Export.png" style="width:80.0%" /></p></li>
+<li><p>Create another Calculated field for Total Merchandise Trade Amount Analysis &gt; Create Calculated Field “Total Trade Amt”: SUM([Import Amt]) + SUM([Export Amt]) <img src="img/Total%20Trade%20Amount.png" style="width:80.0%" /></p></li>
+<li><p>Drag &amp; Drop “Total Trade Amt” to Size, and click on “Size” and adjust the slider <img src="img/Bubble%20Size.png" style="width:80.0%" /></p></li>
+<li><p>Create another calculated field Analysis &gt; Create Calculated Field “Net Importer”: [Total Import] - Total Export <img src="img/Net%20Importer.png" style="width:80.0%" /></p></li>
+<li><p>Drag &amp; Drop “Net Importer” to Color <img src="img/Net%20Importer%20Color.png" style="width:80.0%" /></p></li>
+<li><p>Edit the colors of the bubble plot</p></li>
+</ol>
+<ul>
+<li><p>At the right panel, find “AGG(Net Importer)” and click on the little triangle &gt; Edit Colors <img src="img/Edit%20Bubble%20Color.png" style="width:30.0%" /></p></li>
+<li><p>Choose Red-Blue Diverging <img src="img/Red-Blue.png" style="width:80.0%" /></p></li>
+<li><p>Check “Use Full Color Range” and Click OK <img src="img/Color%20Full%20Range.png" style="width:80.0%" /></p></li>
+<li><p>Click on Colors and change teh opacity of the bubble color</p></li>
+</ul>
+<p><img src="img/Color%20Opacity.png" style="width:30.0%" /></p>
+<ol start="9" type="1">
+<li>Build Filters for Period</li>
+</ol>
+<ul>
+<li><p>Drag &amp; Drop Period into Filters <img src="img/Filter%20Period.png" style="width:80.0%" /></p></li>
+<li><p>Select “Years” and click Next &gt;</p></li>
+</ul>
+<p><img src="img/Filter%20Year.png" style="width:40.0%" /></p>
+<ul>
+<li>Select all 10 of 10 values and click OK</li>
+</ul>
+<p><img src="img/Filter%20Period%20All.png" style="width:50.0%" /></p>
+<ol start="10" type="1">
+<li>Build filter for Country</li>
+</ol>
+<ul>
+<li><p>Drag &amp; Drop Country into Filter <img src="img/Filter%20Country.png" style="width:80.0%" /></p></li>
+<li><p>Select all 10 countries and click OK</p></li>
+</ul>
+<p><img src="img/Filter%20Country%20All.png" style="width:50.0%" /></p>
+<ol start="11" type="1">
+<li>Display the filter Under Filter &gt; Click on little triangle &gt; Show Filter (Do it for YEAR(Period) and Country)</li>
+</ol>
+<p><img src="img/Show%20Filter.png" style="width:30.0%" /></p>
+<ol start="12" type="1">
+<li>Edit the filter display type</li>
+</ol>
+<ul>
+<li>On the right panel:</li>
+<li>“Year” - click on little triangle &gt; Single Value (Slider)</li>
+<li>“Country” - Click on little triangle &gt; Multiple Values (List)</li>
+</ul>
+<p><img src="img/Change%20Filter%20Type.png" style="width:30.0%" /></p>
+<p>Remove “All” from Year Filter.</p>
+<p>Click on little triangle &gt; Customize &gt; Uncheck “Show”All" Value"</p>
+<p><img src="img/Remove%20Filter%20-%20All.png" style="width:30.0%" /></p>
+<ol start="13" type="1">
+<li>Adding Reference Line to differentiate Net Importer and Net Exporter</li>
+</ol>
+<p>Analysis &gt; Create Calculated Field</p>
+<p><img src="img/Reference%20Line.png" style="width:30.0%" /></p>
+<ol start="14" type="1">
+<li><p>Drag &amp; Drop “Reference Line” on Rows <img src="img/Reference%20Line%202.png" style="width:80.0%" /></p></li>
+<li><p>Adjusted the Properties for Reference Line</p></li>
+</ol>
+<ul>
+<li>Drag &amp; Remove all properties except “Country” in details</li>
+<li>Change from Circle to Line Chart</li>
+<li>Change the Size to the smallest</li>
+<li>Change the color to black</li>
+</ul>
+<p><img src="img/RefLine%20remove%20Prop.png" style="width:20.0%" /></p>
+<ol start="16" type="1">
+<li><p>Right click on the line chart &gt; Trend Lines &gt; Show Trend Lines <img src="img/Trend%20Line.png" style="width:60.0%" /></p></li>
+<li><p>Once you have done the above step correctly, it will look like this <img src="img/Trend%20Line%202.png" style="width:80.0%" /></p></li>
+<li><p>However, if you notice, the diagonal line is not drawing end to end.</p></li>
+</ol>
+<ul>
+<li>Right click on the axis &gt; Edit Axis</li>
+</ul>
+<p><img src="img/Edit%20Axis.png" style="width:40.0%" /></p>
+<ul>
+<li>Select “Fixed” and change the Fixed end to 8.5B</li>
+</ul>
+<p><img src="img/Fixed%20Axis.png" style="width:30.0%" /></p>
+<ul>
+<li>A perfect diagonal line is drawn <img src="img/Reference%20Line%203.png" style="width:80.0%" /></li>
+</ul>
+<ol start="19" type="1">
+<li>Go to the Row sections &gt; Click on the little triangle &gt; Dual Axis</li>
+</ol>
+<p><img src="img/Dual%20Axis.png" style="width:30.0%" /></p>
+<p><img src="img/Merge.png" style="width:80.0%" /></p>
+<ol start="20" type="1">
+<li>Adjust the trend line properties</li>
+</ol>
+<ul>
+<li>Right Click on the trend line &gt; Format</li>
+<li>Go to “Trend Line” and Select dash line and slimmest line <img src="imTrendLine%20Properties.png" style="width:30.0%" /></li>
+</ul>
+<ol start="21" type="1">
+<li>Hide the Reference Line Header Right Click on Reference Line Axis &gt; Uncheck Show header</li>
+</ol>
+<p><img src="img/Reference%20Line%204.png" style="width:30.0%" /></p>
+<ol start="22" type="1">
+<li>Create another Calculated Field to show Country is Net Importer/Exporter in a particular year</li>
+</ol>
+<p>Analysis &gt; Create Calculated Field</p>
+<p>“Net Importer/Exporter”: IF[Total Import] &gt; [Total Export] THEN “Net Importer” ELSE “Net Exporter” END</p>
+<p><img src="img/NetValue.png" style="width:30.0%" /></p>
+<ol start="23" type="1">
+<li><p>Drag &amp; Drop “Net Importer/Exporter” onto filter Choose all and click OK <img src="img/Filter%20NetValue%20All.png" style="width:30.0%" /></p></li>
+<li><p>Annotate Net Importer and Net Exporter onto chart</p></li>
+</ol>
+<p>Right click on an empty area in the chart &gt; Annotate &gt; Area</p>
+<p><img src="img/Annotate.png" style="width:30.0%" /></p>
+<ol start="25" type="1">
+<li>Drag &amp; Drop “Country” onto AGG(Total Import) &gt; Label</li>
+</ol>
+<p>Click on Alignment and Select Middle for Vertical Section. This will display country label in the middle of the bubble</p>
+<p><img src="img/Country%20Label.png" style="width:30.0%" /></p>
 <h1 id="final-visualization">5.0. Final Visualization</h1>
 <h3 id="snapshot-of-graph">5.1. Snapshot of Graph</h3>
+<p><img src="img/Final%20Chart.png" style="width:100.0%" /></p>
 <h3 id="major-observation-andor-derived-insights">5.2. Major Observation and/or derived Insights</h3>
+<p>Based on the data observed, Hong Kong has been consistently ranked as Singapore Top 1 Net Exporters from Year 2011 to 2020 and Indonesia is ranked Second in Net Exporters from 2011 to 2020 as well. Taiwan has gradually becoming one of Singapore Top Net Importers from 2011 to 2013 and has held Rank 1 for about 5 years before United States took it’s place in Rank 1 for 2 years.</p>
+<p>Whilst, Mainland China has been steadily ranked as the Singapore Top Importer and Exporter throughout the years, with the highest total merchandise trade values of more than $13 billions in the last 10 years, followed by Malaysia of more than $13 billions.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
