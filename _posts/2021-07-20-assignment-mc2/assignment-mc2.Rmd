@@ -65,6 +65,14 @@ ccLoyalty$last4ccnum = as.character(ccLoyalty$last4ccnum)
 ccLoyalty
 
 ```
+```{r}
+ccLoyalty$location <- gsub("[\x92\xE2\x80\x99]", "", ccLoyalty$location)
+ccLoyalty$location <- gsub("[\xfc\xbe\x8e\x96\x94\xbc]", "e", ccLoyalty$location)
+
+ccLoyalty
+```
+
+
 
 ### Data cleaning
 ```{r, echo=TRUE}
