@@ -246,7 +246,7 @@ p <-ggplot(test, aes(date, time)) +
   scale_x_date(date_breaks = "1 day", date_labels="%d")
   
 fig <- ggplotly(p)
-fig
+
 ```
 
 ```{r}
@@ -283,8 +283,6 @@ tm_shape(bgmap) +
             popup.vars=c("Date:"="date", "Time:"="time", "Day of Week:"="weekday", "Stopover duration (mins):"="diff"))
 
 ```
-
-![](img/Popular Location.png)
 
 ```{r}
 ts
