@@ -235,4 +235,16 @@ Observation | Supporting Evidence
 5. Assumptions was made while cleaning credit card and loyalty card transaction. 1 employee carries multiple credit cards and loyalty card.
 
 
+```{r}
+ccLoyalty_merge$personId <- as_factor(ccLoyalty_merge$personId)
+test <- ccLoyalty_merge
+test$date <- as.Date(test$date)
+test$time <- as.POSIXct(format(test$time, zone="", format = "%H:%M"), format = "%H:%M")
 
+p <-ggplot(test, aes(date, time)) +
+  geom_jitter(aes(group = personId, color = personId)) +
+  scale_y_datetime(date_breaks = "1 hour", date_labels = "%H") +
+  scale_x_date(date_breaks = "1 day", date_labels="%d")
+  
+fig <- ggplotly(p)
+fig
