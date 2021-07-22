@@ -1,0 +1,325 @@
+---
+title: "VAST Challenge 2021: Mini Challenge 2: "
+description: |
+  We are asked to analyze movement and tracking data of GAStech employees to identity anomolies and suspicious behaviour.
+author:
+  - name: Hong, Yun Ting
+    url: https://www.linkedin.com/in/yuntinghong/
+date: 07-01-2021
+output:
+  distill::distill_article:
+    self_contained: false
+    toc: true
+    toc_depth: 3
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# 1. Overview
+GAStech is a company that is located in a country island of Kronos and it has come to their attention that some of the employees had mysteriously went missing. Vehicles tracking data that was secretly installed in the company's cars and Kronos-Kares benefit card information are delivered to authorities for investigation. 
+
+# 2. Literature review of existing analysis performed
+
+# 3. Extracting, wrangling and preparing the input data
+
+### 3.1 Setting up environment
+```{r, echo=TRUE}
+packages = c('tidyverse', 'lubridate', 'dplyr', 'raster', 'clock', 'sf', 'tmap', 
+             'plotly','ggplot2', 'mapview', 'rgdal','rgeos', 'tidyr', 'timevis')
+
+for (p in packages) {
+  if (!require(p, character.only = T)) {
+    install.packages(p, repos = "http://cran.us.r-project.org")
+  }
+  library(p, character.only = T)
+}
+```
+
+
+### 3.2 Importing Employee's Info and Car Assignment
+```{r, echo = TRUE}
+carAssignment <- read_csv("mc2/car-assignments.csv") 
+carAssignment
+```
+
+### Import Credit card and Loyalty card data
+```{r, echo=TRUE}
+ccData <- read_csv("MC2/cc_data.csv")
+ccData$timestamp = date_time_parse(ccData$timestamp, zone = "", format = "%m/%d/%Y %H:%M")
+
+ccData <- ccData %>%
+  mutate(date = as.Date(timestamp), time = strftime(timestamp, "%H:%M"), hr = strftime(timestamp, "%H"))
+
+loyaltyData <- read_csv("MC2/loyalty_data.csv") %>%
+  mutate(date = as.Date(mdy(timestamp)))
+
+ccLoyalty <- left_join(ccData, loyaltyData, by = c("date", "location", "price")) %>%
+  dplyr::select(timestamp.x, date, time, location, price, last4ccnum, loyaltynum, hr) %>%
+  rename(timestamp = timestamp.x) %>%
+  group_by(last4ccnum)
+
+ccLoyalty$weekday = wday(ccLoyalty$date, label = TRUE, abbr = TRUE) 
+ccLoyalty$last4ccnum = as.character(ccLoyalty$last4ccnum)
+ccLoyalty
+
+```
+
+### Data cleaning
+```{r, echo=TRUE}
+ccLoyalty$location <- gsub("[\x92\xE2\x80\x99]", "", ccLoyalty$location)
+ccLoyalty$location <- gsub("[\xfc\xbe\x8e\x96\x94\xbc]", "e", ccLoyalty$location)
+
+ccLoyalty_person <- ccLoyalty %>% 
+    group_by(last4ccnum) %>%
+    distinct(loyaltynum) %>%
+    arrange(last4ccnum) %>%
+  filter(loyaltynum != 'NA')
+
+ccLoyalty_person$ccPerson <- ccLoyalty_person %>% group_indices(last4ccnum)
+
+lcard <- ccLoyalty %>% 
+    group_by(loyaltynum) %>%
+    distinct(last4ccnum) %>%
+    arrange(loyaltynum)
+
+new <- merge(ccLoyalty_person, lcard, by="loyaltynum") %>%
+  arrange(ccPerson)
+
+lookup <- new %>%
+  select(ccPerson, last4ccnum.y) %>%
+  arrange(ccPerson) %>%
+  distinct(last4ccnum.y, .keep_all = TRUE)
+
+xdata <- inner_join(new, lookup, by=c("ccPerson", "last4ccnum.y")) %>%
+  arrange(ccPerson)
+```
+
+## Mapping credit cards and loyalty card 
+A single employee can carries multiple credit cards and loyalty cards 
+
+```{r, echo=TRUE}
+ccLoyalty_merge <- left_join(ccLoyalty, xdata, by=c("last4ccnum"="last4ccnum.y")) %>%
+  select(ccPerson, timestamp, weekday, timestamp, date, time, location, price, last4ccnum, loyaltynum.x, hr) %>%
+  arrange(ccPerson) %>%
+  distinct()
+ 
+# reassign an id to be in running order
+ccLoyalty_merge$personId <- ccLoyalty_merge %>% group_indices(ccPerson)
+ccLoyalty_merge
+```
+```{r}
+
+```
+
+## Importing GPS 
+1. Converting Timestamp to "Year-Month-Day Hour:Minutes" (YYYY-MM-DD HH:MM) format
+2. Separate Timestamp into 2 new columns (Date & Time) 
+3. Converting data type for id to factor 
+
+```{r, echo=TRUE}
+gps <- read_csv("MC2/gps.csv") %>%
+  mutate(date = as.Date(mdy_hms(Timestamp)), time = format(mdy_hms(Timestamp), "%H:%M"))
+
+gps$Timestamp <- date_time_parse(gps$Timestamp, zone = "", format = "%m/%d/%Y %H:%M:%S")  
+gps$hr <- strftime(gps$Timestamp, "%H")
+gps$id <- as_factor(gps$id)
+gps$weekday <- wday(gps$date, label = TRUE, abbr = TRUE) 
+gps
+```
+
+## Car coordinates when vehicle stopped
+I am eliminating coordinates that indicating that the car is moving
+The GPS car coordinates are recorded every 1-5 secs. 
+Therefore, if there is a GPS record difference of more than 5 min, which means the employee has driven the car to a destination.
+Thus this eliminates possible traffic light stops and car moving in motion data.
+
+For each employee:
+1. I am getting the first and last car coordinate each day 
+2. Getting places of interest through the day
+
+```{r, echo=TRUE}
+ts <- gps %>%
+  group_by(id) %>%
+    arrange(date, time, by_group=TRUE) %>%
+      mutate(diff = round(c(difftime(tail(Timestamp, -1), head(Timestamp, -1), units = "mins"), 0)), 2) %>%
+      mutate(count = 1:n(), FIRST = count == 1, LAST = count == max(count)) %>%
+        filter(diff > 5 | FIRST == TRUE | LAST == TRUE) %>%
+  arrange(id) %>%
+  select(id, lat, long, date, time, diff, hr, weekday, Timestamp)
+ts
+```
+### Setting up the map of Abilas, Kronos 
+
+```{r}
+bgmap <- raster("MC2/Geospatial/MC2-tourist_modified.tif")
+
+#tm_shape(bgmap) + # full data of the spatial file
+#  tm_raster(bgmap, legend.show = FALSE)
+
+Abila_st <- readOGR("MC2/Geospatial", layer = "Abila")
+```
+
+# Insights and Observations
+
+### Question 4.1 
+Using just the credit and loyalty card data, identify the most popular locations, and when they are popular. What anomalies do you see? What corrections would you recommend to correct these anomalies?
+
+```{r fig.width=7, fig.height=4, fig.show='hold'}
+location_group <- ccLoyalty_merge %>%
+  group_by(location) %>%
+  summarise(n = n(), Total_Spending = sum(price), Average_Spending = mean(price), No_of_Emp = n_distinct(personId)) %>%
+  arrange(desc(n)) %>%
+  top_n(5)
+
+location_group_Weekday <- ccLoyalty_merge %>%
+  group_by(weekday, location) %>%
+  summarise(n = n(), Total_Spending = sum(price), Average_Spending = mean(price),No_of_Emp = n_distinct(personId)) %>%
+  slice(which.max(n))
+
+location_group_hr <- ccLoyalty_merge %>%
+  group_by(hr, location) %>%
+  summarise(n = n(), Total_Spending = sum(price), Average_Spending = mean(price), No_of_Employees = n_distinct(personId)) %>%
+  slice(which.max(n)) %>%
+  arrange(hr)
+
+## Plotting of graph
+
+popLoc <- ggplot(location_group, aes(n, reorder(location, -n))) +
+  geom_bar(stat='identity') +
+  xlab("Number of transactions") +
+  ylab("Place of Interest") + 
+  geom_text(aes(label=n), position=position_dodge(width=0.9), hjust=-0.15) +
+  annotate('text', x = 200, y = 'Gelatogalore', label = '(Figure 1)')
+
+UniqEmp <- ggplot(location_group, aes(reorder(location, -No_of_Emp), No_of_Emp)) +
+  geom_bar(stat='identity') +
+  xlab("Place of Interest") +
+  ylab("Number of Unique GAStech Employees") +
+  geom_text(aes(label=No_of_Emp), position=position_dodge(width=0.9), vjust=-0.25) + 
+  annotate('text', x = 'Katerinas Cafe', y = 37, label = '(Figure 2)')
+
+popLocByWeek <- ggplot(location_group_Weekday, aes(weekday, n)) +
+  geom_bar(stat='identity') +
+  xlab("Day of Week") +
+  ylab("Number of Transactions") +
+  geom_text(aes(label=paste("(",location,",",n,")")), position=position_dodge(width=0.9), vjust=-0.25, size=3) +
+  annotate('text', x = 'Sun', y = 35, label = '(Figure 3)')
+
+popLocByHr <- ggplot(location_group_hr, aes(n, hr)) +
+  geom_bar(stat='identity') +
+  xlab("Number of Transactions") +
+  ylab("Hour in a day") +
+  geom_text(aes(label=paste("(",location,",",n,")")), position=position_dodge(width=0.9), hjust=-0.15, size=3) +
+  annotate('text', x = 90, y = 13, label = '(Figure 4)')
+```
+
+
+Observation | Supporting Evidence
+------------|--------
+1. Figure 1 shows that "Katerina's Cafe" is identified as the popular location as it has the highest number of transaction made within these 2 weeks, followed by "Hippokampos" and "Guy's Gyros". | ![](img/PopLocation.png){width=30%}
+
+
+2. Figure 2 shows that "Abila Zacharo" attracts more than 80% of GAStech employees who are entitled a company car. 
+3. Figure 3 and 4 indicates that during Monday to Friday (Working day) and between 7am to 8am, the most frequented locations are Food & Beverage outlets, namely "Brew've Been Served" where employees go out for lunch or buy a cup of coffee for their breakfast and most of the employees head over "Katerina's Cafe" at night, probably for dinner. 
+4. However, based on the credit card and loyalty card record, only 30 employees left at least 1 transaction trail.
+5. Assumptions was made while cleaning credit card and loyalty card transaction. 1 employee carries multiple credit cards and loyalty card.
+
+```{r}
+ccLoyalty_merge$personId <- as_factor(ccLoyalty_merge$personId)
+test <- ccLoyalty_merge
+test$date <- as.Date(test$date)
+test$time <- as.POSIXct(format(test$time, zone="", format = "%H:%M"), format = "%H:%M")
+
+p <-ggplot(test, aes(date, time)) +
+  geom_jitter(aes(group = personId, color = personId)) +
+  scale_y_datetime(date_breaks = "1 hour", date_labels = "%H") +
+  scale_x_date(date_breaks = "1 day", date_labels="%d")
+  
+fig <- ggplotly(p)
+fig
+```
+
+```{r}
+
+```
+
+
+### Question 4.2 
+Add the vehicle data to your analysis of the credit and loyalty card data. How does your assessment of the anomalies in question 1 change based on this new data? What discrepancies between vehicle, credit, and loyalty card data do you find?
+
+## Plotting employees stopover locations
+```{r, echo=TRUE}
+
+gps_sf_path <- st_as_sf(ts, coords = c("long", "lat"), crs = 4326)  %>%
+            #group_by(id) %>%
+            #summarize(Timestamp = mean(Timestamp),
+            #             do_union=FALSE) %>%
+            st_cast("POINT")
+
+
+# Map view of Abila, Kronos's route and Employees' whereabout
+tmap_mode("view")
+tm_shape(bgmap) + 
+  tm_rgb(bgmap, r = 1, g = 2, b = 3, # setting red to band 1, green to band 2, blue to band 3
+         alpha = NA,
+         saturation = 1,
+         interpolate = TRUE, 
+         max.value = 255) +
+  tmap_options(max.categories = 44) +
+  tm_shape(Abila_st) + 
+    tm_lines() +
+  tm_shape(gps_sf_path) +
+    tm_dots(col ="id",
+            popup.vars=c("Date:"="date", "Time:"="time", "Day of Week:"="weekday", "Stopover duration (mins):"="diff"))
+
+```
+
+![](img/Popular Location.png)
+
+```{r}
+ts
+```
+
+```{r}
+ggplot(ts, aes(long, lat)) +
+  geom_line(aes(group = id, color = id)) +
+  xlab("Longitude")+
+  ylab("Latitude")
+```
+
+
+```{r}
+
+by_id <- ts %>%
+  filter(id == 4) %>%
+  group_by(date)
+
+by_id$date <- factor(as.Date(by_id$date))
+
+ggplot(by_id, aes(long, lat)) +
+  geom_line(aes(group = date, color=date)) 
+
+gps_sf_path <- st_as_sf(by_id, coords = c("long", "lat"), crs = 4326)  %>%
+            #group_by(id) %>%
+            #summarize(Timestamp = mean(Timestamp),
+            #             do_union=FALSE) %>%
+            st_cast("POINT")
+
+tm_shape(bgmap) + 
+  tm_rgb(bgmap, r = 1, g = 2, b = 3, # setting red to band 1, green to band 2, blue to band 3
+         alpha = NA,
+         saturation = 1,
+         interpolate = TRUE, 
+         max.value = 255) +
+  tmap_options(max.categories = 44) +
+  tm_shape(Abila_st) + 
+    tm_lines() +
+  tm_shape(gps_sf_path) +
+    #tm_lines(col = "date")
+    tm_dots(col ="date",
+            size = 0.09,
+            popup.vars=c("Date:"="date", "Time:"="time", "Day of Week:"="weekday", "Stopover duration (mins):"="diff"))
+```
+
