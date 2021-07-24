@@ -1,7 +1,7 @@
 ---
 title: "VAST Challenge 2021: Mini Challenge 2: "
 description: |
-  We are asked to analyze movement and tracking data of GAStech employees to identity anomolies and suspicious behaviour.
+  We are tasked to analyze movement and tracking data of GAStech employees to identity anomolies and suspicious behaviours.
 author:
   - name: Hong, Yun Ting
     url: https://www.linkedin.com/in/yuntinghong/
@@ -18,7 +18,7 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 
 # 1. Overview
-GAStech is a company that is located in a country island of Kronos and it has come to their attention that some of the employees had mysteriously went missing. Vehicles tracking data that was secretly installed in the company's cars and Kronos-Kares benefit card information are delivered to authorities for investigation. 
+GAStech is a company that is located in a country island of Kronos and it has come to their attention that some of the employees had mysteriously went missing. Vehicles tracking data that was secretly installed in the company's cars and Kronos-Kares benefit card information are delivered to authorities for investigation. We are tasked to used these information to identity patterns, anomolies or suspicious information that can be used to assist the kidnapping of GAStech employees. 
 
 # 2. Literature review of existing analysis performed
 VAST challenges: Mini Case 2 was previously attempted back in 2014. There is a slight differences in the data given, such that credit card/Loyalty card records has Employees namein 2014 case and the revised mini case 2 in 2021 was not given any personal information in the card details. Therefore, it requires more cleaning and wrangling of data to infer the owners of the credits cards. 
@@ -32,7 +32,7 @@ One of the advantage of using R markdown to attempt this challenges is that I ha
 ### 3.1 Setting up environment
 ```{r, echo=TRUE}
 packages = c('tidyverse', 'lubridate', 'dplyr', 'raster', 'clock', 'sf', 'tmap', 
-             'plotly','ggplot2', 'mapview', 'rgdal','rgeos', 'tidyr', 'move', 'moveVis')
+             'plotly','ggplot2', 'mapview', 'rgdal','rgeos', 'tidyr')
 
 for (p in packages) {
   if (!require(p, character.only = T)) {
