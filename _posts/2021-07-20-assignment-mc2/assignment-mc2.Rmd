@@ -74,6 +74,9 @@ ccLoyalty
 ```
 
 ### 3.4 Data cleaning
+1. Convert special characters in Katerina's Cafe to "Katerinas Cafe"
+2. Index similar credit card and loyalty card to 1 employee through grouping 
+
 ```{r, echo=TRUE}
 ccLoyalty$location <- gsub("[\x92\xE2\x80\x99]", "", ccLoyalty$location)
 ccLoyalty$location <- gsub("[\xfc\xbe\x8e\x96\x94\xbc]", "e", ccLoyalty$location)
@@ -108,6 +111,7 @@ xdata$personId <- xdata %>% group_indices(ccPerson)
 
 ### 3.5 Mapping credit cards and loyalty card 
 A single employee can carries multiple credit cards and loyalty cards 
+Match the data created in 3.4 to the transaction data based on credit card to that each transaction is mapped to an id 
 
 ```{r, echo=TRUE}
 ccLoyalty_merge <- left_join(ccLoyalty, xdata, by=c("last4ccnum"="last4ccnum.y")) %>%
@@ -121,7 +125,7 @@ ccLoyalty_merge
 ### 3.6 Importing GPS 
 1. Converting Timestamp to "Year-Month-Day Hour:Minutes" (YYYY-MM-DD HH:MM) format
 2. Separate Timestamp into 2 new columns (Date & Time) 
-3. Converting data type for id to factor 
+3. Converting data type for id to factor  
 
 ```{r, echo=TRUE}
 gps <- read_csv("MC2/gps.csv") %>%
